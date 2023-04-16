@@ -122,7 +122,7 @@ class GUIP:
 
     def abrirMenu(self):
         self.rootGUIP.destroy()
-        import GUIInicio as GIN
+        import GUI_Inicio as GIN
         GIN.iniciar()
 
     def pChiCu(self):

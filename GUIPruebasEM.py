@@ -114,7 +114,7 @@ class GUIPEM:
 
     def abrirMenu(self):
         self.rootGUIPEM.destroy()
-        import GUIInicio as GIN
+        import GUI_Inicio as GIN
         GIN.iniciar()
 
     def pChiCu(self):

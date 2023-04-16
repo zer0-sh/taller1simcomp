@@ -114,7 +114,7 @@ class GUIRAND:
 
     def abrirMenu(self):
         self.rootGUIRAND.destroy()
-        import GUIInicio as GIN
+        import GUI_Inicio as GIN
         GIN.iniciar()
 
     def randoms(self):

@@ -95,10 +95,10 @@ class GUI_Inicio:
 def iniciar():
 
     rootInicio = Tk()
-    obj = GUIInicio(rootInicio)
+    obj = GUI_Inicio(rootInicio)
     rootInicio.mainloop()
 
 
 rootInicio = Tk()
-obj = GUIInicio(rootInicio)
+obj = GUI_Inicio(rootInicio)
 rootInicio.mainloop()

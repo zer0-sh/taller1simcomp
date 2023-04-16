@@ -120,7 +120,7 @@ class GUIEM:
 
     def abrirMenu(self):
         self.rootGUIEM.destroy()
-        import GUIInicio as GIN
+        import GUI_Inicio as GIN
         GIN.iniciar()
 
     def abrirPruebas(self):
