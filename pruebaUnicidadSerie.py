@@ -1,5 +1,6 @@
 from PruebaUniChi import *
 
+
 class pruebaUnicidadSerie:
     def pruebaSerie(arr):
         n = len(arr)
@@ -8,20 +9,20 @@ class pruebaUnicidadSerie:
         # El 25 es el total de celdas de la tabla de distribucion
         FE = nPares/25
         tablaFO = [
-            ["|=|","0.0-0.2","0.2-0.4", "0.4-0.6", "0.6-0.8", "0.8-1.0"],
-            ["0.0-0.2",0,0,0,0,0],
-            ["0.2-0.4",0,0,0,0,0],
-            ["0.4-0.6",0,0,0,0,0],
-            ["0.6-0.8",0,0,0,0,0],
-            ["0.8-1.0",0,0,0,0,0]]
+            ["|=|", "0.0-0.2", "0.2-0.4", "0.4-0.6", "0.6-0.8", "0.8-1.0"],
+            ["0.0-0.2", 0, 0, 0, 0, 0],
+            ["0.2-0.4", 0, 0, 0, 0, 0],
+            ["0.4-0.6", 0, 0, 0, 0, 0],
+            ["0.6-0.8", 0, 0, 0, 0, 0],
+            ["0.8-1.0", 0, 0, 0, 0, 0]]
 
-        tuplas=[]
+        tuplas = []
 
-        for x in range(0, n-1,2):
-            auxTupla=(arr[x], arr[x+1])
+        for x in range(0, n-1, 2):
+            auxTupla = (arr[x], arr[x+1])
             tuplas.append(auxTupla)
-            #comparacion en de la primera fila
-            if(arr[x] >= 0.0 and arr[x] < 0.2 and arr[x+1] >= 0.0 and arr[x+1] < 0.2):
+            # comparacion en de la primera fila
+            if (arr[x] >= 0.0 and arr[x] < 0.2 and arr[x+1] >= 0.0 and arr[x+1] < 0.2):
                 tablaFO[1][1] += 1
             if (arr[x] >= 0.0 and arr[x] < 0.2 and arr[x + 1] >= 0.2 and arr[x + 1] < 0.4):
                 tablaFO[1][2] += 1
@@ -32,7 +33,7 @@ class pruebaUnicidadSerie:
             if (arr[x] >= 0.0 and arr[x] < 0.2 and arr[x + 1] >= 0.8 and arr[x + 1] < 1):
                 tablaFO[1][5] += 1
 
-            #Comparacion de la segunda fila
+            # Comparacion de la segunda fila
             if (arr[x] >= 0.2 and arr[x] < 0.4 and arr[x + 1] >= 0.0 and arr[x + 1] < 0.2):
                 tablaFO[2][1] += 1
             if (arr[x] >= 0.2 and arr[x] < 0.4 and arr[x + 1] >= 0.2 and arr[x + 1] < 0.4):
@@ -89,21 +90,15 @@ class pruebaUnicidadSerie:
             ["0.6-0.8", 0, 0, 0, 0, 0],
             ["0.8-1.0", 0, 0, 0, 0, 0]]
 
-        chiCalc=0
+        chiCalc = 0
 
-        for f in range(1,len(tablaFO)):
-            for c in  range(1,len(tablaFO)):
-                chiCalc+=(FE-tablaFO[f][c])**2/FE
-                chiTab[f][c] = round((FE-tablaFO[f][c])**2/FE,5)
+        for f in range(1, len(tablaFO)):
+            for c in range(1, len(tablaFO)):
+                chiCalc += (FE-tablaFO[f][c])**2/FE
+                chiTab[f][c] = round((FE-tablaFO[f][c])**2/FE, 5)
 
-
-        if(chiCalc <= 36.42):
-            return "Prueba de unicidad Series" + "\n\n" +str(tabulate(tablaFO,  tablefmt='grid', stralign='center')) + "\n\n" + str(tabulate(chiTab, tablefmt='grid', stralign='center')) + "\n\n" + "El valor de Chi calculado es: " + str(chiCalc) + "\n\n" + "Se acepta la hipotesis" + "\n" + "los datos tiene una distribucion uniforme bidimensional"
+        if (chiCalc <= 36.42):
+            return "Prueba de unicidad Series" + "\n\n" + str(tabulate(tablaFO,  tablefmt='grid', stralign='center')) + "\n\n" + str(tabulate(chiTab, tablefmt='grid', stralign='center')) + "\n\n" + "El valor de Chi calculado es: " + str(chiCalc) + "\n\n" + "Se acepta la hipotesis" + "\n" + "los datos tiene una distribucion uniforme bidimensional"
         else:
             return "Prubea de unicidad Series" + "\n\n" + str(tabulate(tablaFO,  tablefmt='grid', stralign='center')) + "\n\n" + str(tabulate(chiTab, tablefmt='grid', stralign='center')) + "\n\n" + "El valor de Chi calculado es: " + str(
-                chiCalc) + "\n\n" + "\033[1mNO\033[0m se acepta la hipotesis" +"\n"+ "los datos tiene una distribucion uniforme bidimensional"
-
-
-
-
-
+                chiCalc) + "\n\n" + "\033[1mNO\033[0m se acepta la hipotesis" + "\n" + "los datos tiene una distribucion uniforme bidimensional"

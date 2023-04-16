@@ -3,7 +3,7 @@ from tabulate import tabulate
 
 
 class GeneradorLineal:
-    ##Constructor##
+    ## Constructor##
     def genLinCongruente(xo, x, a, c, m):
 
         xn = 0
@@ -21,7 +21,6 @@ class GeneradorLineal:
 
         return guardados
 
-
     def paraTabla(xo, x, a, c, m):
 
         xn = 0
@@ -38,4 +37,3 @@ class GeneradorLineal:
             i += 1
 
         return "Datos Generados" + "\n" + str(tabulate(salida, headers=["index", "Xn", "Rn"], tablefmt='grid', stralign='center'))
-

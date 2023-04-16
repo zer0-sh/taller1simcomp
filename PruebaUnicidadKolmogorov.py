@@ -1,6 +1,7 @@
 import numpy as np
 from tabulate import tabulate
 
+
 class PruebaUnicidadKolmogorov:
     def pruebaKolmogorov(arr):
 
@@ -56,23 +57,22 @@ class PruebaUnicidadKolmogorov:
         res = np.array([])
 
         for x in range(len(FO)):
-            freAcu += int(FO[x,1])
+            freAcu += int(FO[x, 1])
             FOA = np.append(FOA, freAcu)
             POA = np.append(POA, freAcu / nDatos)
             PEA = np.append(PEA, (x + 1) / 10)
             res = np.append(res, PEA[x] - POA[x])
 
-        FO = np.insert(FO, 2, FOA,axis=1)
-        FO = np.insert(FO, 3, POA,axis=1)
-        FO = np.insert(FO, 4, PEA,axis=1)
-        FO = np.insert(FO, 5, abs(res),axis=1)
-
+        FO = np.insert(FO, 2, FOA, axis=1)
+        FO = np.insert(FO, 3, POA, axis=1)
+        FO = np.insert(FO, 4, PEA, axis=1)
+        FO = np.insert(FO, 5, abs(res), axis=1)
 
         var = np.max(abs(res))
 
         if (np.max(abs(res)) <= 0.043):
             return "Prueba de Unicidad de Kolmogorov - Smirnov (K-S)" + "\n\n" + str(tabulate(FO, headers=["rango", "FO", "FOA", "POA", "PEA", "|PEA-POA|"], tablefmt='grid',
-                       stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" + "Los datos tienen distribucion U(0,1), \npor lo que el generador es bueno en cuanto a uniformidad"
+                                                                                              stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" + "Los datos tienen distribucion U(0,1), \npor lo que el generador es bueno en cuanto a uniformidad"
         else:
             return "Prueba de Unicidad de Kolmogorov - Smirnov (K-S)" + "\n\n" + str(tabulate(FO, headers=["rango", "FO", "FOA", "POA", "PEA", "|PEA-POA|"], tablefmt='grid',
-                       stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" + "No pasó la prueba de Unicidad de Kolmogorov"
+                                                                                              stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" + "No pasó la prueba de Unicidad de Kolmogorov"
