@@ -1,3 +1,10 @@
+#Taller 1 Simulacion
+# Johan Muñoz
+# Camilo Azcarate
+# Valentina Hurtado
+# Estefany Castro
+
+
 from tkinter import Frame, Label,Button, Tk
 from tkinter import messagebox
 from PIL import ImageTk
