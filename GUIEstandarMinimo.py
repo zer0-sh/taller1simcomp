@@ -113,7 +113,7 @@ class GUIEM:
 
     def abrirLC(self):
         self.rootGUIEM.destroy()
-        import GUILinealCongruente as LC
+        import GUI_GeneradorLinealCongruente as LC
         LC.iniciar()
 
     def abrirMenu(self):

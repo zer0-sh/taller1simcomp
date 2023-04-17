@@ -5,21 +5,28 @@ from GeneradorLineal import *
 # ----- Clase GUILC -----
 
 
-class GUILC:
+class GUI_GeneradorLinealCongruente:
 
-    def __init__(self, rootGUILC):
-        self.rootGUILC = rootGUILC
-        self.rootGUILC.title("Generador de Números Pseaudoleatorios")
-        self.rootGUILC.geometry("1320x650")
-        self.rootGUILC.resizable(False, False)
+    def __init__(self, root_GUIGLC):
+        self.root_GUIGLC = root_GUIGLC
+        self.root_GUIGLC.title("Generador de Números Pseaudoleatorios")
+        self.root_GUI_GLC.resizable(False, False)
+        ancho_ventana = 1200
+        alto_ventana = 650
+        ancho_pantalla = root_GUIGLC.winfo_screenwidth()
+        alto_pantalla = root_GUIGLC.winfo_screenheight()
+        x_ventana = (ancho_pantalla // 2) - (ancho_ventana // 2)
+        y_ventana = (alto_pantalla // 2) - (alto_ventana // 2)
+        self.root_GUI_GLC.geometry(
+            f"{ancho_ventana}x{alto_ventana}+{x_ventana}+{y_ventana}")
         
 # ----- Imagen Fondo -----
         self.bg = ImageTk.PhotoImage(file="Imagenes/fondo01.jpg")
-        Label(self.rootGUILC, image=self.bg).place(
+        Label(self.root_GUIGLC, image=self.bg).place(
             x=0, y=0, relwidth=1, relheight=1)
 
 # ****** Frame 1 GUI Lineal Congruente ******
-        self.frameLC1 = Frame(self.rootGUILC, bg="gray18")
+        self.frameLC1 = Frame(self.root_GUIGLC, bg="gray18")
         self.frameLC1.place(x=50, y=80, width=450, height=450)
 
         Label(self.frameLC1, text="Generador Lineal Congruente", font=(
@@ -41,7 +48,7 @@ class GUILC:
 
 
 # ****** Boton Salir ****** #
-        BotonSalir = Button(self.frameLC1, text="Salir", command=self.rootGUILC.destroy, font=(
+        BotonSalir = Button(self.frameLC1, text="Salir", command=self.root_GUIGLC.destroy, font=(
             "times", 15), bg="firebrick4", fg="white", bd=5, cursor="hand2")
         BotonSalir.place(x=360, y=385, width=70)
 
@@ -61,7 +68,7 @@ class GUILC:
         BotonInfo.place(x=283, y=385, width=67)
 
 # ****** Frame 2 GUI Lineal Congruente ******
-        self.frameLC2 = Frame(self.rootGUILC, bg="gray18")
+        self.frameLC2 = Frame(self.root_GUIGLC, bg="gray18")
         self.frameLC2.place(x=560, y=75, width=750, height=560)
         Label(self.frameLC2, text="Ingrese los datos del generador", font=(
             "times", 17, "bold"), bg="gray18", fg="navajowhite4").place(x=50, y=30)
@@ -96,7 +103,7 @@ class GUILC:
         BotonSalir.place(x=660, y=65, width=50)
 
         # ****** Frame 3 GUI Lineal Congruente ******
-        frameLC3 = Frame(self.rootGUILC, bg="gray18")
+        frameLC3 = Frame(self.root_GUIGLC, bg="gray18")
         frameLC3.place(x=50, y=545, width=450, height=100)
 
         # ***** Boton Pruebas *****
@@ -111,17 +118,17 @@ class GUILC:
                             "X0: 5, a: 106, C: 1283, m: 6075")
 
     def abrirEM(self):
-        self.rootGUILC.destroy()
+        self.root_GUIGLC.destroy()
         import GUIEstandarMinimo as GEM
         GEM.iniciar()
 
     def abrirMenu(self):
-        self.rootGUILC.destroy()
+        self.root_GUIGLC.destroy()
         import GUI_Inicio as GIN
         GIN.iniciar()
 
     def abrirPruebas(self):
-        self.rootGUILC.destroy()
+        self.root_GUIGLC.destroy()
         import GUIPruebasLC as GP
         GP.iniciar()
 
@@ -142,5 +149,5 @@ class GUILC:
 
 def iniciar():
     rootGUILC = Tk()
-    obj = GUILC(rootGUILC)
+    obj = GUI_GeneradorLinealCongruente(rootGUILC)
     rootGUILC.mainloop()

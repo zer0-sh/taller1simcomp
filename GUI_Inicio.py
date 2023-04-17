@@ -62,7 +62,7 @@ class GUI_Inicio:
 
     def abrirLC(self):
         self.rootInicio.destroy()
-        import GUILinealCongruente as LC
+        import GUI_GeneradorLinealCongruente as LC
         LC.iniciar()
 
     def abrirEM(self):
