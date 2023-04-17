@@ -1,7 +1,5 @@
 from tkinter import *
-from tkinter import messagebox
 from PIL import ImageTk
-
 from GeneradorLineal import *
 
 # ----- Clase GUILC -----
@@ -12,9 +10,9 @@ class GUILC:
     def __init__(self, rootGUILC):
         self.rootGUILC = rootGUILC
         self.rootGUILC.title("Generador de Números Pseaudoleatorios")
-        self.rootGUILC.geometry("1366x768")
-        self.rootGUILC.resizable(1, 1)
-
+        self.rootGUILC.geometry("1320x650")
+        self.rootGUILC.resizable(False, False)
+        
 # ----- Imagen Fondo -----
         self.bg = ImageTk.PhotoImage(file="Imagenes/fondo01.jpg")
         Label(self.rootGUILC, image=self.bg).place(
