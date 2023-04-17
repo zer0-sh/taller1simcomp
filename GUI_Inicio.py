@@ -4,7 +4,7 @@
 # Valentina Hurtado 201958542-3743
 # Estefany Castro   201958552-3743
 
-from tkinter import CENTER, Frame, Label, Button, Tk, messagebox
+from tkinter import CENTER, Frame, Label, Button, Tk
 from PIL import ImageTk
 
 # ----- Clase GUI_INICIO -----

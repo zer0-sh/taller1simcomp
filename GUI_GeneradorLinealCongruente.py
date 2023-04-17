@@ -37,7 +37,7 @@ class GUI_GeneradorLinealCongruente:
             x=0, y=0, relwidth=1, relheight=1)
 
         # ----- Frame -----
-        self.frameGLC = Frame(self.root_GUIGLC, bg="gray18")
+        self.frameGLC = Frame(self.root_GUIGLC, bg="gray1")
         self.frameGLC.place(x=0, y=0)
 
         x_frame = (ancho_ventana // 2) - (1100 // 2)
@@ -46,65 +46,65 @@ class GUI_GeneradorLinealCongruente:
 
         # ----- Titulo -----
         Label(self.frameGLC, text="Generador Lineal Congruente", font=(
-            "times", 18, "bold"), bg="gray18", fg="navajowhite4").place(x=45, y=30)
+            "Agency FB", 18, "bold"), bg="gray1", fg="darkgoldenrod1").place(x=45, y=30)
 
         # ----- Entradas Xn, a, c, m -----
-        Label(self.frameGLC, text="a", font=("times", 16, "bold"),
-              bg="gray18", fg="white").place(x=30, y=80)
-        self.a = Entry(self.frameGLC, font=("times", 16), width=9)
+        Label(self.frameGLC, text="a", font=("Agency FB", 16, "bold"),
+              bg="gray1", fg="white").place(x=30, y=80)
+        self.a = Entry(self.frameGLC, font=("Agency FB", 16), width=9)
         self.a.place(x=55, y=82)
 
-        Label(self.frameGLC, text="Xn", font=("times", 16, "bold"),
-              bg="gray18", fg="white").place(x=185, y=80)
-        self.xn = Entry(self.frameGLC, font=("times", 16), width=9)
+        Label(self.frameGLC, text="Xn", font=("Agency FB", 16, "bold"),
+              bg="gray1", fg="white").place(x=185, y=80)
+        self.xn = Entry(self.frameGLC, font=("Agency FB", 16), width=9)
         self.xn.place(x=225, y=82)
 
-        Label(self.frameGLC, text="c", font=("times", 16, "bold"),
-              bg="gray18", fg="white").place(x=350, y=80)
-        self.c = Entry(self.frameGLC, font=("times", 16), width=9)
+        Label(self.frameGLC, text="c", font=("Agency FB", 16, "bold"),
+              bg="gray1", fg="white").place(x=350, y=80)
+        self.c = Entry(self.frameGLC, font=("Agency FB", 16), width=9)
         self.c.place(x=375, y=82)
 
-        Label(self.frameGLC, text="m", font=("times", 16, "bold"),
-              bg="gray18", fg="white").place(x=495, y=80)
-        self.m = Entry(self.frameGLC, font=("times", 16), width=9)
+        Label(self.frameGLC, text="m", font=("Agency FB", 16, "bold"),
+              bg="gray1", fg="white").place(x=495, y=80)
+        self.m = Entry(self.frameGLC, font=("Agency FB", 16), width=9)
         self.m.place(x=525, y=82)
 
         # ----- Boton generar (OK) -----
         BotonOk = Button(self.frameGLC, text="Ok", command=self.generadorLineal, font=(
-            "times", 13), bg="navajowhite4", fg="white", bd=5, cursor="hand2")
+            "Agency FB", 13), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2")
         BotonOk.place(x=660, y=75, width=50)
 
         # ----- Pruebas de uniformidad -----
         Label(self.frameGLC, text="Pruebas de uniformidad:", font=(
-            "times", 13, ), bg="gray18", fg="white").place(x=50, y=140)
+            "Agency FB", 13, ), bg="gray1", fg="white").place(x=50, y=140)
 
         # ----- Boton prueba de chi_cuadrado -----
         BotonChi = Button(self.frameGLC, text="Chi χ²", font=(
-            "times", 13), bg="navajowhite4", fg="white", bd=5, cursor="hand2", command=self.pruebaChiCuadrado)
+            "Agency FB", 13), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaChiCuadrado)
         BotonChi.place(x=90, y=180, width=150)
 
         # ----- Boton prueba de kolmogorov -----
         BotonKo = Button(self.frameGLC, text="Kolmogorov", font=(
-            "times", 13), bg="navajowhite4", fg="white", bd=5, cursor="hand2", command=self.pKolmo)
+            "Agency FB", 13), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pKolmo)
         BotonKo.place(x=90, y=240, width=150)
 
         # ----- Pruebas de independencia -----
         Label(self.frameGLC, text="Pruebas de independencia:", font=(
-            "times", 13, ), bg="gray18", fg="white").place(x=50, y=300)
+            "Agency FB", 13, ), bg="gray1", fg="white").place(x=50, y=300)
 
         # ----- Boton prueba de corridas -----
         BotonCo = Button(self.frameGLC, text="Corridas", font=(
-            "times", 13), bg="navajowhite4", fg="white", bd=5, cursor="hand2", command=self.pruebaCorridas)
+            "Agency FB", 13), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaCorridas)
         BotonCo.place(x=90, y=340, width=150)
 
         # ----- Boton Prueba Series -----
         BotonSe = Button(self.frameGLC, text="Series", font=(
-            "times", 13), bg="navajowhite4", fg="white", bd=5, cursor="hand2", command=self.pruebaSeries)
+            "Agency FB", 13), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaSeries)
         BotonSe.place(x=90, y=400, width=150)
 
         # ----- Boton Prueba Poker -----
         BotonPo = Button(self.frameGLC, text="Poker", font=(
-            "times", 13), bg="navajowhite4", fg="white", bd=5, cursor="hand2", command=self.pruebaPoker)
+            "Agency FB", 13), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaPoker)
         BotonPo.place(x=60, y=460, width=120)
         opcions = ["3", "4", "5"]
         self.variable = StringVar(self.frameGLC)
@@ -115,12 +115,12 @@ class GUI_GeneradorLinealCongruente:
 
         # ----- Boton Estandar Minimo -----
         BotonVolv = Button(self.frameGLC, text="Estandar Mínimo", font=(
-            "times", 15), bg="navajowhite4", fg="white", bd=5, cursor="hand2", command=self.abrirEM)
+            "Agency FB", 15), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirEM)
         BotonVolv.place(x=25, y=530, width=170)
 
         # ----- Botón Menú Principal -----
         BotonInfo = Button(self.frameGLC, text="Menú", font=(
-            "times", 15), bg="Skyblue4", fg="white", bd=5, cursor="hand2", command=self.abrirMenu)
+            "Agency FB", 15), bg="Skyblue4", fg="white", bd=5, cursor="hand2", command=self.abrirMenu)
         BotonInfo.place(x=283, y=530, width=67)
 
     def pruebaChiCuadrado(self):
@@ -134,7 +134,7 @@ class GUI_GeneradorLinealCongruente:
         datos = PruebaUniChi.PruebaUniChi.pruChi(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
-                         bg="gray18", bd=0, fg="white")
+                         bg="gray1", bd=0, fg="white")
         self.text.pack()
         self.text.place(x=600, y=250)
 
@@ -150,7 +150,7 @@ class GUI_GeneradorLinealCongruente:
             arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
-                         bg="gray18", bd=0, fg="white")
+                         bg="gray1", bd=0, fg="white")
         self.text.pack()
         self.text.place(x=600, y=250)
 
@@ -167,7 +167,7 @@ class GUI_GeneradorLinealCongruente:
         datos = pruebaCorrido.pruebaCorrido.corrido(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
-                         bg="gray18", bd=0, fg="white")
+                         bg="gray1", bd=0, fg="white")
         self.text.pack()
         self.text.place(x=600, y=250)
 
@@ -182,7 +182,7 @@ class GUI_GeneradorLinealCongruente:
         datos = pruebaUnicidadSerie.pruebaUnicidadSerie.pruebaSerie(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
-                         bg="gray18", bd=0, fg="white")
+                         bg="gray1", bd=0, fg="white")
         self.text.pack()
         self.text.place(x=600, y=250)
 
@@ -199,7 +199,7 @@ class GUI_GeneradorLinealCongruente:
             arreglo, k)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
-                         bg="gray18", bd=0, fg="white")
+                         bg="gray1", bd=0, fg="white")
         self.text.pack()
         self.text.place(x=600, y=250)
 
@@ -227,7 +227,7 @@ class GUI_GeneradorLinealCongruente:
         arreglo = GeneradorLineal.paraTabla(xn, xn, a, c, m)
         self.text.insert(INSERT, arreglo)
         self.text.config(width=35, height=25, state="disable",
-                         bg="gray18", bd=0, fg="white")
+                         bg="gray1", bd=0, fg="white")
         self.text.pack()
         self.text.place(x=600, y=250)
 
