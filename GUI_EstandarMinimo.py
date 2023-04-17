@@ -8,11 +8,11 @@ from tkinter import *
 from PIL import ImageTk
 
 import GeneradorEstandarMinimo
-import PruebaIndependenciaPoker
-import PruebaUniChi
-import PruebaUnicidadKolmogorov
-import pruebaCorrido
-import pruebaUnicidadSerie
+import PruebaPoker
+import PruebaChiCuadrado
+import PruebaKolmogorov
+import PruebaCorrido
+import PruebaSeries
 
 # ----- Clase GUI_EstandarMinimo -----
 
@@ -132,12 +132,12 @@ class GUI_EstandarMinimo:
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
             xn, xn, a, m)
-        datos = PruebaUniChi.PruebaUniChi.pruChi(arreglo)
+        datos = PruebaChiCuadrado.PruebaUniChi.pruChi(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=600, y=250)
+        self.text.place(x=450, y=150)
 
     def pruebaKolmogorov(self):
         self.text = Text(self.frameEM)
@@ -146,13 +146,13 @@ class GUI_EstandarMinimo:
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
             xn, xn, a, m)
-        datos = PruebaUnicidadKolmogorov.PruebaUnicidadKolmogorov.pruebaKolmogorov(
+        datos = PruebaKolmogorov.PruebaUnicidadKolmogorov.pruebaKolmogorov(
             arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=600, y=250)
+        self.text.place(x=400, y=150)
 
     def pruebaCorridas(self):
         self.text = Text(self.frameEM)
@@ -161,12 +161,12 @@ class GUI_EstandarMinimo:
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
             xn, xn, a, m)
-        datos = pruebaCorrido.pruebaCorrido.corrido(arreglo)
+        datos = PruebaCorrido.pruebaCorrido.corrido(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=600, y=250)
+        self.text.place(x=450, y=150)
 
     def pruebaSeries(self):
         self.text = Text(self.frameEM)
@@ -175,12 +175,12 @@ class GUI_EstandarMinimo:
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
             xn, xn, a, m)
-        datos = pruebaUnicidadSerie.pruebaUnicidadSerie.pruebaSerie(arreglo)
+        datos = PruebaSeries.pruebaUnicidadSerie.pruebaSerie(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=600, y=250)
+        self.text.place(x=450, y=150)
 
     def pruebaPoker(self):
         self.text = Text(self.frameEM)
@@ -190,13 +190,13 @@ class GUI_EstandarMinimo:
         k = int(self.variable.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
             xn, xn, a, m)
-        datos = PruebaIndependenciaPoker.PruebaIndependenciaPoker.pruebaPoker(
+        datos = PruebaPoker.PruebaIndependenciaPoker.pruebaPoker(
             arreglo, k)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=600, y=250)
+        self.text.place(x=450, y=150)
 
     def abrirLC(self):
         self.root_GUIEM.destroy()
@@ -210,7 +210,7 @@ class GUI_EstandarMinimo:
 
     def abrirPoker(self):
         self.root_GUIEM.destroy()
-        import GUI_Random as GR
+        import GUIrandomPython as GR
         GR.iniciar()
 
     def generadorEM(self):
@@ -222,7 +222,7 @@ class GUI_EstandarMinimo:
             GeneradorEstandarMinimo.GeneradorEstandar.paraTablas(xn, xn, a, m))
         self.text.insert(INSERT, arreglo)
         self.text.config(width=35, height=25, state="disable",
-                         bg="gray18", bd=0, fg="white")
+                         bg="gray1", bd=0, fg="white")
         self.text.pack()
         self.text.place(x=450, y=150)
 

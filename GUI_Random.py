@@ -7,12 +7,12 @@
 from tkinter import *
 from PIL import ImageTk
 
-import pythonRandom
-import PruebaIndependenciaPoker
-import PruebaUniChi
-import PruebaUnicidadKolmogorov
-import pruebaCorrido
-import pruebaUnicidadSerie
+import GeneradorRandom
+import PruebaPoker
+import PruebaChiCuadrado
+import PruebaKolmogorov
+import PruebaCorrido
+import PruebaSeries
 
 
 # ----- Clase GUI_Random -----
@@ -134,7 +134,7 @@ class GUI_Random:
     def randoms(self):
         self.text = Text(self.framePR)
         x = int(self.cuadro.get())
-        mostrar = (pythonRandom.pyRandom.tabla(x))
+        mostrar = (GeneradorRandom.pyRandom.tabla(x))
         self.text.insert(INSERT, mostrar)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
@@ -144,8 +144,8 @@ class GUI_Random:
     def pruebaChiCuadrado(self):
         self.text = Text(self.framePR)
         x = int(self.cuadro.get())
-        arreglo = pythonRandom.pyRandom.arreglo(x)
-        datos = PruebaUniChi.PruebaUniChi.pruChi(arreglo)
+        arreglo = GeneradorRandom.pyRandom.arreglo(x)
+        datos = PruebaChiCuadrado.PruebaUniChi.pruChi(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
@@ -155,8 +155,8 @@ class GUI_Random:
     def pruebaKolmogorov(self):
         self.text = Text(self.framePR)
         x = int(self.cuadro.get())
-        arreglo = pythonRandom.pyRandom.arreglo(x)
-        datos = PruebaUnicidadKolmogorov.PruebaUnicidadKolmogorov.pruebaKolmogorov(
+        arreglo = GeneradorRandom.pyRandom.arreglo(x)
+        datos = PruebaKolmogorov.PruebaUnicidadKolmogorov.pruebaKolmogorov(
             arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
@@ -167,10 +167,10 @@ class GUI_Random:
     def pruebaCorridas(self):
         self.text = Text(self.framePR)
         x = int(self.cuadro.get())
-        arreglo = pythonRandom.pyRandom.arreglo(x)
-        nc = pruebaCorrido.pruebaCorrido.contar(arreglo)
+        arreglo = GeneradorRandom.pyRandom.arreglo(x)
+        nc = PruebaCorrido.pruebaCorrido.contar(arreglo)
         print(nc)
-        datos = pruebaCorrido.pruebaCorrido.corrido(arreglo)
+        datos = PruebaCorrido.pruebaCorrido.corrido(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
@@ -180,8 +180,8 @@ class GUI_Random:
     def pruebaSeries(self):
         self.text = Text(self.framePR)
         x = int(self.cuadro.get())
-        arreglo = pythonRandom.pyRandom.arreglo(x)
-        datos = pruebaUnicidadSerie.pruebaUnicidadSerie.pruebaSerie(arreglo)
+        arreglo = GeneradorRandom.pyRandom.arreglo(x)
+        datos = PruebaSeries.pruebaUnicidadSerie.pruebaSerie(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
@@ -191,9 +191,9 @@ class GUI_Random:
     def pruebaPoker(self):
         self.text = Text(self.framePR)
         x = int(self.cuadro.get())
-        arreglo = pythonRandom.pyRandom.arreglo(x)
+        arreglo = GeneradorRandom.pyRandom.arreglo(x)
         k = int(self.variable.get())
-        datos = PruebaIndependenciaPoker.PruebaIndependenciaPoker.pruebaPoker(
+        datos = PruebaPoker.PruebaIndependenciaPoker.pruebaPoker(
             arreglo, k)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
