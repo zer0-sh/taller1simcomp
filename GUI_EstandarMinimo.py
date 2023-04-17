@@ -23,7 +23,7 @@ class GUI_EstandarMinimo:
         self.root_GUIEM = root_GUIEM
         self.root_GUIEM.title("Generador estandar minimo")
         self.root_GUIEM.resizable(False, False)
-        ancho_ventana = 1000
+        ancho_ventana = 1100
         alto_ventana = 650
         ancho_pantalla = root_GUIEM.winfo_screenwidth()
         alto_pantalla = root_GUIEM.winfo_screenheight()
@@ -41,9 +41,9 @@ class GUI_EstandarMinimo:
         self.frameEM = Frame(self.root_GUIEM, bg="gray1")
         self.frameEM.place(x=0, y=0)
 
-        x_frame = (ancho_ventana // 2) - (900 // 2)
+        x_frame = (ancho_ventana // 2) - (1000 // 2)
         y_frame = (alto_ventana // 2) - (600 // 2)
-        self.frameEM.place(x=x_frame, y=y_frame, width=900, height=600)
+        self.frameEM.place(x=x_frame, y=y_frame, width=1000, height=600)
 
         # ----- Titulo -----
         Titulo = Label(self.frameEM, text="Generador Estandar Minino", font=(
@@ -210,7 +210,7 @@ class GUI_EstandarMinimo:
 
     def abrirPoker(self):
         self.root_GUIEM.destroy()
-        import GUIrandomPython as GR
+        import GUI_Random as GR
         GR.iniciar()
 
     def generadorEM(self):

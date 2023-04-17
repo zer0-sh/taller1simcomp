@@ -72,7 +72,7 @@ class GUI_Inicio:
 
     def abrirRandom(self):
         self.rootInicio.destroy()
-        import GUIrandomPython as PR
+        import GUI_Random as PR
         PR.iniciar()
 
 

@@ -23,7 +23,7 @@ class GUI_GeneradorLinealCongruente:
         self.root_GUIGLC = root_GUIGLC
         self.root_GUIGLC.title("Generador lineal congruente")
         self.root_GUIGLC.resizable(False, False)
-        ancho_ventana = 1000
+        ancho_ventana = 1100
         alto_ventana = 650
         ancho_pantalla = root_GUIGLC.winfo_screenwidth()
         alto_pantalla = root_GUIGLC.winfo_screenheight()
@@ -41,9 +41,9 @@ class GUI_GeneradorLinealCongruente:
         self.frameGLC = Frame(self.root_GUIGLC, bg="gray1")
         self.frameGLC.place(x=0, y=0)
 
-        x_frame = (ancho_ventana // 2) - (900 // 2)
+        x_frame = (ancho_ventana // 2) - (1000 // 2)
         y_frame = (alto_ventana // 2) - (600 // 2)
-        self.frameGLC.place(x=x_frame, y=y_frame, width=900, height=600)
+        self.frameGLC.place(x=x_frame, y=y_frame, width=1000, height=600)
 
         # ----- Titulo -----
         Titulo = Label(self.frameGLC, text="Generador Lineal Congruente", font=(
@@ -222,7 +222,7 @@ class GUI_GeneradorLinealCongruente:
 
     def abrirPoker(self):
         self.root_GUIGLC.destroy()
-        import GUIrandomPython as GR
+        import GUI_Random as GR
         GR.iniciar()
 
     def generadorLineal(self):
