@@ -23,7 +23,7 @@ class GUI_GeneradorLinealCongruente:
         self.root_GUIGLC = root_GUIGLC
         self.root_GUIGLC.title("Generador lineal congruente")
         self.root_GUIGLC.resizable(False, False)
-        ancho_ventana = 900
+        ancho_ventana = 1000
         alto_ventana = 650
         ancho_pantalla = root_GUIGLC.winfo_screenwidth()
         alto_pantalla = root_GUIGLC.winfo_screenheight()
@@ -41,9 +41,9 @@ class GUI_GeneradorLinealCongruente:
         self.frameGLC = Frame(self.root_GUIGLC, bg="gray1")
         self.frameGLC.place(x=0, y=0)
 
-        x_frame = (ancho_ventana // 2) - (800 // 2)
+        x_frame = (ancho_ventana // 2) - (900 // 2)
         y_frame = (alto_ventana // 2) - (600 // 2)
-        self.frameGLC.place(x=x_frame, y=y_frame, width=800, height=600)
+        self.frameGLC.place(x=x_frame, y=y_frame, width=900, height=600)
 
         # ----- Titulo -----
         Titulo = Label(self.frameGLC, text="Generador Lineal Congruente", font=(
@@ -143,7 +143,7 @@ class GUI_GeneradorLinealCongruente:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaKolmogorov(self):
         self.text = Text(self.frameGLC)
@@ -159,7 +159,7 @@ class GUI_GeneradorLinealCongruente:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaCorridas(self):
         self.text = Text(self.frameGLC)
@@ -176,7 +176,7 @@ class GUI_GeneradorLinealCongruente:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaSeries(self):
         self.text = Text(self.frameGLC)
@@ -191,7 +191,7 @@ class GUI_GeneradorLinealCongruente:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaPoker(self):
         self.text = Text(self.frameGLC)
@@ -208,7 +208,7 @@ class GUI_GeneradorLinealCongruente:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def abrirEM(self):
         self.root_GUIGLC.destroy()

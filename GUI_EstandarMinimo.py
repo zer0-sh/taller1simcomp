@@ -23,7 +23,7 @@ class GUI_EstandarMinimo:
         self.root_GUIEM = root_GUIEM
         self.root_GUIEM.title("Generador estandar minimo")
         self.root_GUIEM.resizable(False, False)
-        ancho_ventana = 900
+        ancho_ventana = 1000
         alto_ventana = 650
         ancho_pantalla = root_GUIEM.winfo_screenwidth()
         alto_pantalla = root_GUIEM.winfo_screenheight()
@@ -41,9 +41,9 @@ class GUI_EstandarMinimo:
         self.frameEM = Frame(self.root_GUIEM, bg="gray1")
         self.frameEM.place(x=0, y=0)
 
-        x_frame = (ancho_ventana // 2) - (800 // 2)
+        x_frame = (ancho_ventana // 2) - (900 // 2)
         y_frame = (alto_ventana // 2) - (600 // 2)
-        self.frameEM.place(x=x_frame, y=y_frame, width=800, height=600)
+        self.frameEM.place(x=x_frame, y=y_frame, width=900, height=600)
 
         # ----- Titulo -----
         Titulo = Label(self.frameEM, text="Generador Estandar Minino", font=(
@@ -140,7 +140,7 @@ class GUI_EstandarMinimo:
         self.text.place(x=600, y=250)
 
     def pruebaKolmogorov(self):
-        self.text = Text(self.framePEM2)
+        self.text = Text(self.frameEM)
         a = int(self.a.get())
         xn = int(self.xn.get())
         m = int(self.m.get())
@@ -155,7 +155,7 @@ class GUI_EstandarMinimo:
         self.text.place(x=600, y=250)
 
     def pruebaCorridas(self):
-        self.text = Text(self.framePEM2)
+        self.text = Text(self.frameEM)
         a = int(self.a.get())
         xn = int(self.xn.get())
         m = int(self.m.get())
@@ -169,7 +169,7 @@ class GUI_EstandarMinimo:
         self.text.place(x=600, y=250)
 
     def pruebaSeries(self):
-        self.text = Text(self.framePEM2)
+        self.text = Text(self.frameEM)
         a = int(self.a.get())
         xn = int(self.xn.get())
         m = int(self.m.get())
@@ -183,7 +183,7 @@ class GUI_EstandarMinimo:
         self.text.place(x=600, y=250)
 
     def pruebaPoker(self):
-        self.text = Text(self.framePEM2)
+        self.text = Text(self.frameEM)
         a = int(self.a.get())
         xn = int(self.xn.get())
         m = int(self.m.get())
