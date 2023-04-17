@@ -14,7 +14,7 @@ class GUI_Inicio:
 
     def __init__(self, rootInicio):
         self.rootInicio = rootInicio
-        self.rootInicio.title("Generador de Números Pseaudoleatorios")
+        self.rootInicio.title("Generador de números pseaudoleatorios")
         self.rootInicio.resizable(False, False)
         ancho_ventana = 900
         alto_ventana = 600
