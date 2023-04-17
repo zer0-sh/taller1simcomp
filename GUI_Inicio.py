@@ -25,12 +25,12 @@ class GUI_Inicio:
         rootInicio.geometry(
             f"{ancho_ventana}x{alto_ventana}+{x_ventana}+{y_ventana}")
 
-# ----- Imagen Fondo -----
+        # ----- Imagen Fondo -----
         self.bg = ImageTk.PhotoImage(file="Imagenes/fondo02.jpg")
         Label(self.rootInicio, image=self.bg).place(
             x=0, y=0, relwidth=1, relheight=1)
 
-        # ----- Frame Login -----
+        # ----- Frame -----
         frameInicio = Frame(self.rootInicio, bg="gray1")
         frameInicio.place(x=0, y=0)
 
