@@ -11,8 +11,7 @@ from tabulate import tabulate
 class GeneradorEstandar:
 
     # ----- Constructor -----
-    def generador(xo, x, a, m):
-        x = xo
+    def generador(xo, a, m):
         xn = 0
         i = 0
         salida = []
@@ -44,8 +43,8 @@ class GeneradorEstandar:
 
         return guardados
 
-    def paraTablas(xo, x, a, m):
-        x = xo
+    def paraTablas(xo, a, m):
+
         xn = 0
         i = 0
         salida = []

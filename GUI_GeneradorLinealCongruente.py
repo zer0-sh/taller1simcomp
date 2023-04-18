@@ -122,7 +122,7 @@ class GUI_GeneradorLinealCongruente:
 
         # ----- Boton random -----
         BotonVolv = Button(self.frameGLC, text="Random", font=(
-            "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirPoker)
+            "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirRandom)
         BotonVolv.place(x=150, y=530, width=120)
 
         # ----- Botón menú principal -----
@@ -137,7 +137,7 @@ class GUI_GeneradorLinealCongruente:
         c = int(self.c.get())
         m = int(self.m.get())
         arreglo = GeneradorLineal.GeneradorLineal.genLinCongruente(
-            xn, xn, a, c, m)
+            xn, a, c, m)
         datos = PruebaChiCuadrado.PruebaUniChi.pruChi(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
@@ -152,7 +152,7 @@ class GUI_GeneradorLinealCongruente:
         c = int(self.c.get())
         m = int(self.m.get())
         arreglo = GeneradorLineal.GeneradorLineal.genLinCongruente(
-            xn, xn, a, c, m)
+            xn, a, c, m)
         datos = PruebaKolmogorov.PruebaUnicidadKolmogorov.pruebaKolmogorov(
             arreglo)
         self.text.insert(INSERT, datos)
@@ -168,7 +168,7 @@ class GUI_GeneradorLinealCongruente:
         c = int(self.c.get())
         m = int(self.m.get())
         arreglo = GeneradorLineal.GeneradorLineal.genLinCongruente(
-            xn, xn, a, c, m)
+            xn, a, c, m)
         nc = PruebaCorrido.pruebaCorrido.contar(arreglo)
         print(nc)
         datos = PruebaCorrido.pruebaCorrido.corrido(arreglo)
@@ -176,7 +176,7 @@ class GUI_GeneradorLinealCongruente:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=380, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaSeries(self):
         self.text = Text(self.frameGLC)
@@ -185,7 +185,7 @@ class GUI_GeneradorLinealCongruente:
         c = int(self.c.get())
         m = int(self.m.get())
         arreglo = GeneradorLineal.GeneradorLineal.genLinCongruente(
-            xn, xn, a, c, m)
+            xn, a, c, m)
         datos = PruebaSeries.pruebaUnicidadSerie.pruebaSerie(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
@@ -201,7 +201,7 @@ class GUI_GeneradorLinealCongruente:
         m = int(self.m.get())
         k = int(self.variable.get())
         arreglo = GeneradorLineal.GeneradorLineal.genLinCongruente(
-            xn, xn, a, c, m)
+            xn, a, c, m)
         datos = PruebaPoker.PruebaIndependenciaPoker.pruebaPoker(
             arreglo, k)
         self.text.insert(INSERT, datos)
@@ -220,10 +220,10 @@ class GUI_GeneradorLinealCongruente:
         import GUI_Inicio as GIN
         GIN.iniciar()
 
-    def abrirPoker(self):
+    def abrirRandom(self):
         self.root_GUIGLC.destroy()
-        import GUIrandomPython as GR
-        GR.iniciar()
+        import GUI_Random as PR
+        PR.iniciar()
 
     def generadorLineal(self):
         self.text = Text(self.frameGLC)
@@ -231,12 +231,12 @@ class GUI_GeneradorLinealCongruente:
         xn = int(self.xn.get())
         c = int(self.c.get())
         m = int(self.m.get())
-        arreglo = GeneradorLineal.GeneradorLineal.paraTabla(xn, xn, a, c, m)
+        arreglo = GeneradorLineal.GeneradorLineal.paraTabla(xn, a, c, m)
         self.text.insert(INSERT, arreglo)
-        self.text.config(width=35, height=25, state="disable",
+        self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
 
 def iniciar():

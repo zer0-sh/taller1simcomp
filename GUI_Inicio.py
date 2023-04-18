@@ -38,8 +38,9 @@ class GUI_Inicio:
         y_frame = (alto_ventana // 2) - (480 // 2)
         frameInicio.place(x=x_frame, y=y_frame, width=510, height=480)
 
-        label_texto = Label(frameInicio, text="NÚMEROS \n PSEUDOALEATORIOS", font=("Agency FB", 35, "bold"), bg="gray1", fg="darkgoldenrod1")
-        label_texto.place(relx=0.5, rely=0.2, anchor=CENTER)      
+        label_texto = Label(frameInicio, text="NÚMEROS \n PSEUDOALEATORIOS", font=(
+            "Agency FB", 35, "bold"), bg="gray1", fg="darkgoldenrod1")
+        label_texto.place(relx=0.5, rely=0.2, anchor=CENTER)
 
         # ----- Label seleccion -----
         Label(frameInicio, text="- Por favor, seleccione un generador:",
@@ -51,7 +52,7 @@ class GUI_Inicio:
         BotonLC.place(relx=0.5, y=280, width=200, anchor="center")
 
         # ----- Boton generador de estandar minimo -----
-        BotonEM = Button(frameInicio, text="Estandar Mínimo", cursor="hand2", relief= "flat", command=self.abrirEM, font=(
+        BotonEM = Button(frameInicio, text="Estandar Mínimo", cursor="hand2", relief="flat", command=self.abrirEM, font=(
             "Agency FB", 20, "bold"), bg="darkgoldenrod1", fg="white")
         BotonEM.place(relx=0.5, y=350, width=200, anchor="center")
 

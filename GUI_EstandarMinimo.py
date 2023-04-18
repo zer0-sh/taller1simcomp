@@ -23,7 +23,7 @@ class GUI_EstandarMinimo:
         self.root_GUIEM = root_GUIEM
         self.root_GUIEM.title("Generador estandar minimo")
         self.root_GUIEM.resizable(False, False)
-        ancho_ventana = 1100
+        ancho_ventana = 1000
         alto_ventana = 650
         ancho_pantalla = root_GUIEM.winfo_screenwidth()
         alto_pantalla = root_GUIEM.winfo_screenheight()
@@ -41,9 +41,9 @@ class GUI_EstandarMinimo:
         self.frameEM = Frame(self.root_GUIEM, bg="gray1")
         self.frameEM.place(x=0, y=0)
 
-        x_frame = (ancho_ventana // 2) - (1000 // 2)
+        x_frame = (ancho_ventana // 2) - (900 // 2)
         y_frame = (alto_ventana // 2) - (600 // 2)
-        self.frameEM.place(x=x_frame, y=y_frame, width=1000, height=600)
+        self.frameEM.place(x=x_frame, y=y_frame, width=900, height=600)
 
         # ----- Titulo -----
         Titulo = Label(self.frameEM, text="Generador Estandar Minino", font=(
@@ -117,7 +117,7 @@ class GUI_EstandarMinimo:
 
         # ----- Boton random -----
         BotonVolv = Button(self.frameEM, text="Random", font=(
-            "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirPoker)
+            "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirRandom)
         BotonVolv.place(x=150, y=530, width=120)
 
         # ----- Botón menú principal -----
@@ -131,13 +131,13 @@ class GUI_EstandarMinimo:
         xn = int(self.xn.get())
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
-            xn, xn, a, m)
+            xn, a, m)
         datos = PruebaChiCuadrado.PruebaUniChi.pruChi(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaKolmogorov(self):
         self.text = Text(self.frameEM)
@@ -145,7 +145,7 @@ class GUI_EstandarMinimo:
         xn = int(self.xn.get())
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
-            xn, xn, a, m)
+            xn, a, m)
         datos = PruebaKolmogorov.PruebaUnicidadKolmogorov.pruebaKolmogorov(
             arreglo)
         self.text.insert(INSERT, datos)
@@ -160,13 +160,13 @@ class GUI_EstandarMinimo:
         xn = int(self.xn.get())
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
-            xn, xn, a, m)
+            xn, a, m)
         datos = PruebaCorrido.pruebaCorrido.corrido(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaSeries(self):
         self.text = Text(self.frameEM)
@@ -174,13 +174,13 @@ class GUI_EstandarMinimo:
         xn = int(self.xn.get())
         m = int(self.m.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
-            xn, xn, a, m)
+            xn, a, m)
         datos = PruebaSeries.pruebaUnicidadSerie.pruebaSerie(arreglo)
         self.text.insert(INSERT, datos)
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaPoker(self):
         self.text = Text(self.frameEM)
@@ -196,7 +196,7 @@ class GUI_EstandarMinimo:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def abrirLC(self):
         self.root_GUIEM.destroy()
@@ -208,10 +208,10 @@ class GUI_EstandarMinimo:
         import GUI_Inicio as GIN
         GIN.iniciar()
 
-    def abrirPoker(self):
+    def abrirRandom(self):
         self.root_GUIEM.destroy()
-        import GUIrandomPython as GR
-        GR.iniciar()
+        import GUI_Random as PR
+        PR.iniciar()
 
     def generadorEM(self):
         self.text = Text(self.frameEM)
@@ -219,12 +219,12 @@ class GUI_EstandarMinimo:
         xn = int(self.xn.get())
         m = int(self.m.get())
         arreglo = (
-            GeneradorEstandarMinimo.GeneradorEstandar.paraTablas(xn, xn, a, m))
+            GeneradorEstandarMinimo.GeneradorEstandar.paraTablas(xn, a, m))
         self.text.insert(INSERT, arreglo)
-        self.text.config(width=35, height=25, state="disable",
+        self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
 
 def iniciar():

@@ -139,7 +139,7 @@ class GUI_Random:
         self.text.config(width=70, height=25, state="disable",
                          bg="gray1", bd=0, fg="white")
         self.text.pack()
-        self.text.place(x=450, y=150)
+        self.text.place(x=400, y=150)
 
     def pruebaChiCuadrado(self):
         self.text = Text(self.framePR)

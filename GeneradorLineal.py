@@ -11,7 +11,7 @@ from tabulate import tabulate
 class GeneradorLineal:
 
     # ----- Constructor -----
-    def genLinCongruente(xo, x, a, c, m):
+    def genLinCongruente(xo, a, c, m):
         xn = 0
         i = 0
         guardados = np.array([])
@@ -32,8 +32,8 @@ class GeneradorLineal:
 
         return guardados
 
-    def paraTabla(xo, x, a, c, m):
-        x = xo
+    def paraTabla(xo, a, c, m):
+
         xn = 0
         i = 0
         rn = xo / m
