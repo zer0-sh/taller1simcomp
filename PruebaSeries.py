@@ -12,7 +12,7 @@ class pruebaUnicidadSerie:
         n = len(arr)
         nPares = n/2
         xCalc = 0
-        # El 25 es el total de celdas de la tabla de distribucion
+        # ----- El 25 es el total de celdas de la tabla de distribucion -----
         FE = nPares/25
         tablaFO = [
             ["|=|", "0.0-0.2", "0.2-0.4", "0.4-0.6", "0.6-0.8", "0.8-1.0"],
@@ -27,7 +27,8 @@ class pruebaUnicidadSerie:
         for x in range(0, n-1, 2):
             auxTupla = (arr[x], arr[x+1])
             tuplas.append(auxTupla)
-            # comparacion en de la primera fila
+
+            # ----- Comparacion de la primera fila -----
             if (arr[x] >= 0.0 and arr[x] < 0.2 and arr[x+1] >= 0.0 and arr[x+1] < 0.2):
                 tablaFO[1][1] += 1
             if (arr[x] >= 0.0 and arr[x] < 0.2 and arr[x + 1] >= 0.2 and arr[x + 1] < 0.4):
@@ -39,7 +40,7 @@ class pruebaUnicidadSerie:
             if (arr[x] >= 0.0 and arr[x] < 0.2 and arr[x + 1] >= 0.8 and arr[x + 1] < 1):
                 tablaFO[1][5] += 1
 
-            # Comparacion de la segunda fila
+            # ----- Comparacion de la segunda fila -----
             if (arr[x] >= 0.2 and arr[x] < 0.4 and arr[x + 1] >= 0.0 and arr[x + 1] < 0.2):
                 tablaFO[2][1] += 1
             if (arr[x] >= 0.2 and arr[x] < 0.4 and arr[x + 1] >= 0.2 and arr[x + 1] < 0.4):
@@ -51,7 +52,7 @@ class pruebaUnicidadSerie:
             if (arr[x] >= 0.2 and arr[x] < 0.4 and arr[x + 1] >= 0.8 and arr[x + 1] < 1):
                 tablaFO[2][5] += 1
 
-            # Comparacion de la tercer fila
+            # ----- Comparacion de la tercer fila -----
             if (arr[x] >= 0.4 and arr[x] < 0.6 and arr[x + 1] >= 0.0 and arr[x + 1] < 0.2):
                 tablaFO[3][1] += 1
             if (arr[x] >= 0.4 and arr[x] < 0.6 and arr[x + 1] >= 0.2 and arr[x + 1] < 0.4):
@@ -63,7 +64,7 @@ class pruebaUnicidadSerie:
             if (arr[x] >= 0.4 and arr[x] < 0.6 and arr[x + 1] >= 0.8 and arr[x + 1] < 1):
                 tablaFO[3][5] += 1
 
-            # Comparacion de la cuarta fila
+            # ----- Comparacion de la cuarta fila -----
             if (arr[x] >= 0.6 and arr[x] < 0.8 and arr[x + 1] >= 0.0 and arr[x + 1] < 0.2):
                 tablaFO[4][1] += 1
             if (arr[x] >= 0.6 and arr[x] < 0.8 and arr[x + 1] >= 0.2 and arr[x + 1] < 0.4):
@@ -75,7 +76,7 @@ class pruebaUnicidadSerie:
             if (arr[x] >= 0.6 and arr[x] < 0.8 and arr[x + 1] >= 0.8 and arr[x + 1] < 1):
                 tablaFO[4][5] += 1
 
-            # Comparacion de la quinta fila
+            # ----- Comparacion de la quinta fila -----
             if (arr[x] >= 0.8 and arr[x] < 1 and arr[x + 1] >= 0.0 and arr[x + 1] < 0.2):
                 tablaFO[5][1] += 1
             if (arr[x] >= 0.8 and arr[x] < 1 and arr[x + 1] >= 0.2 and arr[x + 1] < 0.4):
@@ -87,7 +88,7 @@ class pruebaUnicidadSerie:
             if (arr[x] >= 0.8 and arr[x] < 1 and arr[x + 1] >= 0.8 and arr[x + 1] < 1):
                 tablaFO[5][5] += 1
 
-        # Tabla con el valor de chi calculado
+        # ----- Tabla con el valor de chi cuadrado calculado -----
         chiTab = [
             ["|=|", "0.0-0.2", "0.2-0.4", "0.4-0.6", "0.6-0.8", "0.8-1.0"],
             ["0.0-0.2", 0, 0, 0, 0, 0],

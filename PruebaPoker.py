@@ -11,7 +11,8 @@ from tabulate import tabulate
 class PruebaIndependenciaPoker:
     def pruebaPoker(arr, k):
         n = len(arr)
-        # tabla de frecuencias  cuando son 3 digitos
+
+        # ----- tabla de frecuencias cuando son 3 digitos -----
         TabF3 = [["Casos", "FO", "FE", "(FO-FE)²/FE"],
                  ["3 dig iguales", 0, n*0.01, 0],
                  ["2 dig iguales", 0, n*0.27, 0],
@@ -21,7 +22,6 @@ class PruebaIndependenciaPoker:
 
             for x in arr:
                 numAux = round(Decimal(x), 3)
-
                 var = list(str(numAux))
                 del var[0:2]
 
@@ -58,10 +58,10 @@ class PruebaIndependenciaPoker:
                        "El valor de chi calculado con la prueba de poker es : " + \
                     str(chiCalc3)
 
-        # tabla de frecuencias  cunado son 5 digitos
+        # ----- Tabla de frecuencias cuando son 5 digitos -----
         TabF5 = [["Casos", "FO", "FE", "(FO-FE)²/FE"],
-                 ["Todos iguales", 0, n*0.0001, 0],  # ya
-                 ["4 iguales", 0, n*0.0045, 0],  # ya
+                 ["Todos iguales", 0, n*0.0001, 0],
+                 ["4 iguales", 0, n*0.0045, 0],
                  ["Full house", 0, n*0.009, 0],
                  ["3 iguales", 0, n*0.072, 0],
                  ["2 pares", 0, n*0.108, 0],
@@ -71,25 +71,23 @@ class PruebaIndependenciaPoker:
         if (k == 5):
 
             for x in arr:
-
                 numAux = round(Decimal(x), 5)
-
                 var = list(str(numAux))
                 del var[0:2]
 
-                # -------- todas iguales
+                # ----- Todas iguales -----
                 if (var[0] == var[1] == var[2] == var[3] == var[4]):
                     TabF5[1][1] += 1
 
-                # -------- 4 iguaales y 1 diferente
+                # ----- 4 iguales y 1 diferente -----
                 elif ((var[0] == var[1] == var[2] == var[3] and var[0] != var[4] and var[1] != var[4] and var[2] != var[4] and var[3] != var[4]) or
                       (var[0] == var[1] == var[2] == var[4] and var[0] != var[3] and var[1] != var[3] and var[2] != var[3] and var[4] != var[3]) or
-                        (var[0] == var[1] == var[3] == var[4] and var[0] != var[2] and var[1] != var[2] and var[3] != var[2] and var[4] != var[2]) or
-                        (var[0] == var[2] == var[3] == var[4] and var[0] != var[1] and var[2] != var[1] and var[3] != var[1] and var[4] != var[1]) or
-                        (var[1] == var[2] == var[3] == var[4] and var[1] != var[0] and var[2] != var[0] and var[2] != var[0] and var[4] != var[0])):
+                      (var[0] == var[1] == var[3] == var[4] and var[0] != var[2] and var[1] != var[2] and var[3] != var[2] and var[4] != var[2]) or
+                      (var[0] == var[2] == var[3] == var[4] and var[0] != var[1] and var[2] != var[1] and var[3] != var[1] and var[4] != var[1]) or
+                      (var[1] == var[2] == var[3] == var[4] and var[1] != var[0] and var[2] != var[0] and var[2] != var[0] and var[4] != var[0])):
                     TabF5[2][1] += 1
 
-                # -------- 3 iguales y 2 iguales
+                # ----- 3 iguales y 2 iguales -----
                 elif ((var[0] == var[1] == var[2] and var[3] == var[4] and var[0] != var[3]) or
                       (var[0] == var[1] == var[3] and var[2] == var[4] and var[0] != var[2]) or
                       (var[0] == var[1] == var[4] and var[2] == var[3] and var[0] != var[2]) or
@@ -99,74 +97,62 @@ class PruebaIndependenciaPoker:
                       (var[2] == var[3] == var[4] and var[0] == var[1] and var[2] != var[0]) or
                       (var[1] == var[2] == var[3] and var[0] == var[4] and var[1] != var[0]) or
                       (var[1] == var[2] == var[4] and var[0] == var[3] and var[1] != var[0]) or
-                      (var[0] == var[2] == var[3] and var[1]
-                       == var[4] and var[0] != var[1])
-                      ):
+                      (var[0] == var[2] == var[3] and var[1] == var[4] and var[0] != var[1])):
                     TabF5[3][1] += 1
 
-                # 3 iguales y 2 diferentes
+                # ----- 3 iguales y 2 diferentes -----
                 elif ((var[0] == var[1] == var[2] and var[3] != var[4]) or
-                        (var[0] == var[1] == var[3] and var[2] != var[4]) or
-                        (var[0] == var[1] == var[4] and var[2] != var[3]) or
-                        (var[0] == var[2] == var[4] and var[1] != var[3]) or
-                        (var[0] == var[3] == var[4] and var[1] != var[2]) or
-                        (var[1] == var[3] == var[4] and var[0] != var[2]) or
-                        (var[2] == var[3] == var[4] and var[0] != var[1]) or
-                        (var[1] == var[2] == var[3] and var[0] != var[4]) or
-                        (var[1] == var[2] == var[4] and var[0] != var[3]) or
-                        (var[0] == var[2] == var[3] and var[1] != var[4])
-                      ):
+                      (var[0] == var[1] == var[3] and var[2] != var[4]) or
+                      (var[0] == var[1] == var[4] and var[2] != var[3]) or
+                      (var[0] == var[2] == var[4] and var[1] != var[3]) or
+                      (var[0] == var[3] == var[4] and var[1] != var[2]) or
+                      (var[1] == var[3] == var[4] and var[0] != var[2]) or
+                      (var[2] == var[3] == var[4] and var[0] != var[1]) or
+                      (var[1] == var[2] == var[3] and var[0] != var[4]) or
+                      (var[1] == var[2] == var[4] and var[0] != var[3]) or
+                      (var[0] == var[2] == var[3] and var[1] != var[4])):
                     TabF5[4][1] += 1
 
-                # 2 pares y una difernte
-                elif (
-                        (var[0] == var[1] and var[2] == var[3] and var[4] != var[0] != var[2]) or
-                        (var[0] == var[1] and var[2] == var[4] and var[3] != var[0] != var[2]) or
-                        (var[0] == var[1] and var[3] == var[4] and var[2] != var[0] != var[3]) or
-                        (var[0] == var[2] and var[3] == var[4] and var[1] != var[0] != var[3]) or
-                        (var[1] == var[2] and var[3] == var[4] and var[0] != var[1] != var[3]) or
-
-                        (var[0] == var[2] and var[1] == var[3] and var[4] != var[0] != var[1]) or
-                        (var[0] == var[2] and var[1] == var[4] and var[3] != var[0] != var[1]) or
-                        (var[0] == var[3] and var[1] == var[4] and var[2] != var[0] != var[1]) or
-                        (var[0] == var[3] and var[2] == var[4] and var[1] != var[0] != var[2]) or
-                        (var[1] == var[3] and var[2] == var[4] and var[0] != var[1] != var[2]) or
-
-                        (var[0] == var[3] and var[1] == var[2] and var[4] != var[0] != var[1]) or
-                        (var[0] == var[4] and var[1] == var[2] and var[3] != var[0] != var[1]) or
-                        (var[0] == var[4] and var[1] == var[3] and var[2] != var[0] != var[1]) or
-                        (var[0] == var[4] and var[2] == var[3] and var[1] != var[0] != var[2]) or
-                        (var[1] == var[4] and var[2] == var[3] and var[0] != var[1] != var[2]) or
-
-                        (var[0] == var[2] and var[1] == var[3] and var[4] != var[0] != var[1]) or
-                        (var[0] == var[2] and var[1] == var[4] and var[3] != var[0] != var[1]) or
-                        (var[0] == var[3] and var[1] == var[4] and var[2] != var[0] != var[1]) or
-                        (var[0] == var[3] and var[2] == var[4] and var[1] != var[0] != var[2]) or
-                        (var[1] == var[3] and var[2] == var[4]
-                         and var[0] != var[1] != var[2])
-                ):
-
+                # ----- 2 pares y una difernte -----
+                elif ((var[0] == var[1] and var[2] == var[3] and var[4] != var[0] != var[2]) or
+                      (var[0] == var[1] and var[2] == var[4] and var[3] != var[0] != var[2]) or
+                      (var[0] == var[1] and var[3] == var[4] and var[2] != var[0] != var[3]) or
+                      (var[0] == var[2] and var[3] == var[4] and var[1] != var[0] != var[3]) or
+                      (var[1] == var[2] and var[3] == var[4] and var[0] != var[1] != var[3]) or
+                      (var[0] == var[2] and var[1] == var[3] and var[4] != var[0] != var[1]) or
+                      (var[0] == var[2] and var[1] == var[4] and var[3] != var[0] != var[1]) or
+                      (var[0] == var[3] and var[1] == var[4] and var[2] != var[0] != var[1]) or
+                      (var[0] == var[3] and var[2] == var[4] and var[1] != var[0] != var[2]) or
+                      (var[1] == var[3] and var[2] == var[4] and var[0] != var[1] != var[2]) or
+                      (var[0] == var[3] and var[1] == var[2] and var[4] != var[0] != var[1]) or
+                      (var[0] == var[4] and var[1] == var[2] and var[3] != var[0] != var[1]) or
+                      (var[0] == var[4] and var[1] == var[3] and var[2] != var[0] != var[1]) or
+                      (var[0] == var[4] and var[2] == var[3] and var[1] != var[0] != var[2]) or
+                      (var[1] == var[4] and var[2] == var[3] and var[0] != var[1] != var[2]) or
+                      (var[0] == var[2] and var[1] == var[3] and var[4] != var[0] != var[1]) or
+                      (var[0] == var[2] and var[1] == var[4] and var[3] != var[0] != var[1]) or
+                      (var[0] == var[3] and var[1] == var[4] and var[2] != var[0] != var[1]) or
+                      (var[0] == var[3] and var[2] == var[4] and var[1] != var[0] != var[2]) or
+                      (var[1] == var[3] and var[2] == var[4] and var[0] != var[1] != var[2])):
                     TabF5[5][1] += 1
 
-                # 2 iguales y 3 diferentes
+                # ----- 2 iguales y 3 diferentes -----
                 elif ((var[0] != var[1] != var[2] and var[3] == var[4]) or
-                        (var[0] != var[1] != var[3] and var[2] == var[4]) or
-                        (var[0] != var[1] != var[4] and var[2] == var[3]) or
-                        (var[0] != var[2] != var[4] and var[1] == var[3]) or
-                        (var[0] != var[3] != var[4] and var[1] == var[2]) or
-                        (var[1] != var[3] != var[4] and var[0] == var[2]) or
-                        (var[2] != var[3] != var[4] and var[0] == var[1]) or
-                        (var[1] != var[2] != var[3] and var[0] == var[4]) or
-                        (var[1] != var[2] != var[4] and var[0] == var[3]) or
-                        (var[0] != var[2] != var[3] and var[1] == var[4])
-                      ):
+                      (var[0] != var[1] != var[3] and var[2] == var[4]) or
+                      (var[0] != var[1] != var[4] and var[2] == var[3]) or
+                      (var[0] != var[2] != var[4] and var[1] == var[3]) or
+                      (var[0] != var[3] != var[4] and var[1] == var[2]) or
+                      (var[1] != var[3] != var[4] and var[0] == var[2]) or
+                      (var[2] != var[3] != var[4] and var[0] == var[1]) or
+                      (var[1] != var[2] != var[3] and var[0] == var[4]) or
+                      (var[1] != var[2] != var[4] and var[0] == var[3]) or
+                      (var[0] != var[2] != var[3] and var[1] == var[4])):
                     TabF5[6][1] += 1
 
-                # todas diferentes
+                # ----- Todas diferentes -----
                 elif ((var[0] != var[1] and var[0] != var[2] and var[0] != var[3] and var[0] != var[4]) and
                       (var[1] != var[2] and var[1] != var[3] and var[1] != var[4]) and
-                      (var[2] != var[3] and var[2] != var[4]) and
-                        (var[3] != var[4])):
+                      (var[2] != var[3] and var[2] != var[4]) and (var[3] != var[4])):
                     TabF5[7][1] += 1
 
             chiCalc5 = 0
