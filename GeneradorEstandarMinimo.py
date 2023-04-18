@@ -27,6 +27,7 @@ class GeneradorEstandar:
                 quebrador = True
             xn = a * (xo % q) - r * math.floor(xo / q)
             temp.append(xo)
+
             if (xn >= 0):
                 xo = xn
                 rn = xn / mn
@@ -41,10 +42,15 @@ class GeneradorEstandar:
                 salida.append([i, xo, rn])
                 guardados.append(rn)
 
-        return guardados
+            if xn < 0:
+                quebrador = True
+
+        if xn < 0:
+            return 0
+        else:
+            return guardados
 
     def paraTablas(xo, a, m):
-
         xn = 0
         i = 0
         salida = []
@@ -60,6 +66,7 @@ class GeneradorEstandar:
                 quebrador = True
             temp.append(xo)
             xn = a * (xo % q) - r * math.floor(xo / q)
+
             if (xn >= 0):
                 xo = xn
                 rn = xn / mn
@@ -73,5 +80,9 @@ class GeneradorEstandar:
                 i += 1
                 salida.append([i, xo, rn])
                 guardados.append(rn)
-
-        return "Datos Generados:" + str(i) + "\n" + str(tabulate(salida, headers=["index", "Xn", "Rn"], tablefmt='grid', stralign='center'))
+            if xn < 0:
+                quebrador = True
+        if xn < 0:
+            return "Generador erroneo(Ha salido un negativo)"
+        else:
+            return "Datos Generados:" + str(i) + "\n" + str(tabulate(salida, headers=["index", "Xn", "Rn"], tablefmt='grid', stralign='center'))
