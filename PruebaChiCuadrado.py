@@ -4,17 +4,16 @@
 # Valentina Hurtado 201958542-3743
 # Estefany Castro   201958552-3743
 
-import numpy as np
 from tabulate import tabulate
+
+import numpy as np
 
 
 class PruebaUniChi:
+
     def pruChi(arr):
-
         datos = len(arr)
-
         fe = datos / 10
-
         tabla = np.array([['0-0.1'],
                           ['0.1-0.2'],
                           ['0.2-0.3'],
@@ -25,7 +24,6 @@ class PruebaUniChi:
                           ['0.7-0.8'],
                           ['0.8-0.9'],
                           ['0.9-1.0']])
-
         FO = np.array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
         for x in arr:
@@ -64,7 +62,8 @@ class PruebaUniChi:
 
         if (xCalc <= 16.92):
 
-            return "Prueba de Unicidad de Chi Cuadrado (χ²)" + "\n\n" + str(tabulate(tabla, headers=["rango", "FO", "FE", "(FE - FO)^2/FE"], tablefmt='grid', stralign='center')) \
+            return "Prueba de Unicidad de Chi Cuadrado (χ²)" + "\n\n" + \
+                str(tabulate(tabla, headers=["rango", "FO", "FE", "(FE - FO)^2/FE"], tablefmt='grid', stralign='center')) \
                    + "\n\n" + "Calculado :" + str(xCalc) + "\n\n" + "Los datos tienen distribucion U(0,1)" + \
                 "\nPor lo que el generador es bueno en cuanto a uniformidad"
         else:

@@ -9,10 +9,11 @@ from tabulate import tabulate
 
 
 class PruebaIndependenciaPoker:
+
     def pruebaPoker(arr, k):
         n = len(arr)
 
-        # ----- tabla de frecuencias cuando son 3 digitos -----
+        # °°°°°° tabla de frecuencias cuando son 3 digitos °°°°°°
         TabF3 = [["Casos", "FO", "FE", "(FO-FE)²/FE"],
                  ["3 dig iguales", 0, n*0.01, 0],
                  ["2 dig iguales", 0, n*0.27, 0],
@@ -29,7 +30,7 @@ class PruebaIndependenciaPoker:
                     TabF3[1][1] += 1
 
                 if ((var[0] == var[1] and var[0] != var[2]) or
-                        var[0] == var[2] and var[0] != var[1] or
+                    var[0] == var[2] and var[0] != var[1] or
                         var[1] == var[2] and var[1] != var[0]):
                     TabF3[2][1] += 1
 
@@ -37,6 +38,7 @@ class PruebaIndependenciaPoker:
                     TabF3[3][1] += 1
 
             chiCalc3 = 0
+
             au1 = (TabF3[1][1]-TabF3[1][2])**2 / TabF3[1][2]
             TabF3[1][3] = au1
 
@@ -45,24 +47,27 @@ class PruebaIndependenciaPoker:
 
             au3 = (TabF3[3][1] - TabF3[3][2])**2 / TabF3[3][2]
             TabF3[3][3] = au3
+
             chiCalc3 = au1+au2+au3
 
             if (chiCalc3 <= 5.99):
                 return "Prueba de independecia Poker" + "\n\n" +\
-                       str(tabulate(TabF3, tablefmt='grid', stralign='center')) + "\n\n" + "Pasa la prueba de independencia de poker" + "\n" +\
+                       str(tabulate(TabF3, tablefmt='grid', stralign='center')) + "\n\n" \
+                    + "Pasa la prueba de independencia de poker" + "\n" + \
                        "El valor de chi calculado con la prueba de poker es : " + \
                     str(chiCalc3)
             else:
                 return "Prueba de independecia Poker" + "\n\n" +\
-                       str(tabulate(TabF3, tablefmt='grid', stralign='center')) + "\n\n" + "NO la prueba de independencia de poker" + "\n" +\
+                       str(tabulate(TabF3, tablefmt='grid', stralign='center')) + "\n\n" \
+                    + "No pasa la prueba de independencia de poker" + "\n" +\
                        "El valor de chi calculado con la prueba de poker es : " + \
                     str(chiCalc3)
 
-        # ----- Tabla de frecuencias cuando son 5 digitos -----
+        # °°°°°° Tabla de frecuencias cuando son 5 digitos °°°°°°
         TabF5 = [["Casos", "FO", "FE", "(FO-FE)²/FE"],
                  ["Todos iguales", 0, n*0.0001, 0],
                  ["4 iguales", 0, n*0.0045, 0],
-                 ["Full house", 0, n*0.009, 0],
+                 ["Fullhouse", 0, n*0.009, 0],
                  ["3 iguales", 0, n*0.072, 0],
                  ["2 pares", 0, n*0.108, 0],
                  ["1 par", 0, n*0.504, 0],
@@ -75,11 +80,11 @@ class PruebaIndependenciaPoker:
                 var = list(str(numAux))
                 del var[0:2]
 
-                # ----- Todas iguales -----
+                # °°°°°° Todas iguales °°°°°°
                 if (var[0] == var[1] == var[2] == var[3] == var[4]):
                     TabF5[1][1] += 1
 
-                # ----- 4 iguales y 1 diferente -----
+                # °°°°°° 4 iguales y 1 diferente °°°°°°
                 elif ((var[0] == var[1] == var[2] == var[3] and var[0] != var[4] and var[1] != var[4] and var[2] != var[4] and var[3] != var[4]) or
                       (var[0] == var[1] == var[2] == var[4] and var[0] != var[3] and var[1] != var[3] and var[2] != var[3] and var[4] != var[3]) or
                       (var[0] == var[1] == var[3] == var[4] and var[0] != var[2] and var[1] != var[2] and var[3] != var[2] and var[4] != var[2]) or
@@ -87,7 +92,7 @@ class PruebaIndependenciaPoker:
                       (var[1] == var[2] == var[3] == var[4] and var[1] != var[0] and var[2] != var[0] and var[2] != var[0] and var[4] != var[0])):
                     TabF5[2][1] += 1
 
-                # ----- 3 iguales y 2 iguales -----
+                # °°°°°° 3 iguales y 2 iguales °°°°°°
                 elif ((var[0] == var[1] == var[2] and var[3] == var[4] and var[0] != var[3]) or
                       (var[0] == var[1] == var[3] and var[2] == var[4] and var[0] != var[2]) or
                       (var[0] == var[1] == var[4] and var[2] == var[3] and var[0] != var[2]) or
@@ -100,7 +105,7 @@ class PruebaIndependenciaPoker:
                       (var[0] == var[2] == var[3] and var[1] == var[4] and var[0] != var[1])):
                     TabF5[3][1] += 1
 
-                # ----- 3 iguales y 2 diferentes -----
+                # °°°°°° 3 iguales y 2 diferentes °°°°°°
                 elif ((var[0] == var[1] == var[2] and var[3] != var[4]) or
                       (var[0] == var[1] == var[3] and var[2] != var[4]) or
                       (var[0] == var[1] == var[4] and var[2] != var[3]) or
@@ -113,7 +118,7 @@ class PruebaIndependenciaPoker:
                       (var[0] == var[2] == var[3] and var[1] != var[4])):
                     TabF5[4][1] += 1
 
-                # ----- 2 pares y una difernte -----
+                # °°°°°° 2 pares y una difernte °°°°°°
                 elif ((var[0] == var[1] and var[2] == var[3] and var[4] != var[0] != var[2]) or
                       (var[0] == var[1] and var[2] == var[4] and var[3] != var[0] != var[2]) or
                       (var[0] == var[1] and var[3] == var[4] and var[2] != var[0] != var[3]) or
@@ -136,7 +141,7 @@ class PruebaIndependenciaPoker:
                       (var[1] == var[3] and var[2] == var[4] and var[0] != var[1] != var[2])):
                     TabF5[5][1] += 1
 
-                # ----- 2 iguales y 3 diferentes -----
+                # °°°°°° 2 iguales y 3 diferentes °°°°°°
                 elif ((var[0] != var[1] != var[2] and var[3] == var[4]) or
                       (var[0] != var[1] != var[3] and var[2] == var[4]) or
                       (var[0] != var[1] != var[4] and var[2] == var[3]) or
@@ -149,13 +154,14 @@ class PruebaIndependenciaPoker:
                       (var[0] != var[2] != var[3] and var[1] == var[4])):
                     TabF5[6][1] += 1
 
-                # ----- Todas diferentes -----
+                # °°°°°° Todas diferentes °°°°°°
                 elif ((var[0] != var[1] and var[0] != var[2] and var[0] != var[3] and var[0] != var[4]) and
                       (var[1] != var[2] and var[1] != var[3] and var[1] != var[4]) and
                       (var[2] != var[3] and var[2] != var[4]) and (var[3] != var[4])):
                     TabF5[7][1] += 1
 
             chiCalc5 = 0
+
             au4 = (TabF5[1][1] - TabF5[1][2])**2 / TabF5[1][2]
             TabF5[1][3] = au4
 
@@ -187,6 +193,87 @@ class PruebaIndependenciaPoker:
             else:
                 return "Prueba de independecia Poker" + "\n\n" + \
                        str(tabulate(TabF5, tablefmt='grid',
-                                    stralign='center')) + "\n\n" + "Pasa la prueba de independencia de poker" + "\n" + \
+                                    stralign='center')) + "\n\n" + "No pasa la prueba de independencia de poker" + "\n" + \
                        "El valor de chi calculado con la prueba de poker es : " + \
                     str(chiCalc5)
+
+        # °°°°°° Tabla de frecuencias cuando son 4 digitos °°°°°°
+        TabF4 = [["Casos", "FO", "FE", "(FO-FE)²/FE"],
+                 ["Todos iguales", 0, n*0.001, 0],
+                 ["3 iguales", 0, n*0.036, 0],
+                 ["2 pares", 0, n*0.027, 0],
+                 ["1 par", 0, n*0.432, 0],
+                 ["Todos diferentes", 0, n*0.504, 0]]
+
+        if (k == 4):
+
+            for x in arr:
+                numAux = round(Decimal(x), 4)
+                var = list(str(numAux))
+                del var[0:2]
+
+                # °°°°°° Todas iguales °°°°°°
+                if (var[0] == var[1] == var[2] == var[3]):
+                    TabF4[1][1] += 1
+
+                # °°°°°° 3 iguales y 1 diferente °°°°°°
+                elif ((var[1] == var[2] == var[3] and var[0] != var[1]) or
+                      (var[0] == var[2] == var[3] and var[1] != var[2]) or
+                      (var[0] == var[1] == var[3] and var[2] != var[1]) or
+                      (var[0] == var[1] == var[2] and var[3] != var[1])):
+                    TabF4[2][1] += 1
+
+                # °°°°°° 2 iguales °°°°°°
+                elif ((var[0] == var[1] and var[2] == var[3] and var[1] != var[2]) or
+                      (var[0] == var[2] and var[1] == var[3] and var[0] != var[3]) or
+                      (var[0] == var[3] and var[1] == var[2] and var[0] != var[1]) or
+                      (var[1] == var[2] and var[3] == var[0] and var[1] != var[0]) or
+                      (var[1] == var[3] and var[2] == var[0] and var[1] != var[2]) or
+                      (var[2] == var[3] and var[1] == var[0] and var[0] != var[3])):
+                    TabF4[3][1] += 1
+
+                # °°°°°° 2 iguales y 2 diferentes °°°°°°
+                elif ((var[0] == var[1] and var[1] != var[2] and var[1] != var[3] and var[2] != var[3]) or
+                      (var[0] == var[2] and var[0] != var[1] and var[0] != var[3] and var[1] != var[3]) or
+                      (var[0] == var[3] and var[0] != var[2] and var[0] != var[1] and var[1] != var[2]) or
+                      (var[1] == var[2] and var[1] != var[3] and var[1] != var[0] and var[0] != var[3]) or
+                      (var[1] == var[3] and var[1] != var[2] and var[1] != var[0] and var[2] != var[0]) or
+                      (var[2] == var[3] and var[2] != var[1] and var[2] != var[0] and var[1] != var[0])):
+                    TabF4[4][1] += 1
+
+                # °°°°°° Todas diferentes °°°°°°
+                elif ((var[0] != var[1] and var[0] != var[2] and var[0] != var[3]) and
+                      (var[1] != var[2] and var[1] != var[3]) and
+                      (var[2] != var[3])):
+                    TabF4[5][1] += 1
+
+            chiCalc4 = 0
+
+            au11 = (TabF4[1][1] - TabF4[1][2])**2 / TabF4[1][2]
+            TabF4[1][3] = au11
+
+            au12 = (TabF4[2][1] - TabF4[2][2])**2 / TabF4[2][2]
+            TabF4[2][3] = au12
+
+            au13 = (TabF4[3][1] - TabF4[3][2])**2 / TabF4[3][2]
+            TabF4[3][3] = au13
+
+            au14 = (TabF4[4][1] - TabF4[4][2])**2 / TabF4[4][2]
+            TabF4[4][3] = au14
+
+            au15 = (TabF4[5][1] - TabF4[5][2])**2 / TabF4[5][2]
+            TabF4[5][3] = au15
+
+            chiCalc4 = au11 + au12 + au13 + au14 + au15
+
+            if (chiCalc4 > 12.99):
+                return "Prueba de independecia Poker" + "\n\n" +\
+                       str(tabulate(TabF4, tablefmt='grid', stralign='center')) + "\n\n" + "Pasa la prueba de independencia de poker" + "\n" +\
+                       "El valor de chi calculado con la prueba de poker es : " + \
+                    str(chiCalc4)
+            else:
+                return "Prueba de independecia Poker" + "\n\n" + \
+                       str(tabulate(TabF4, tablefmt='grid',
+                                    stralign='center')) + "\n\n" + "NO pasa la prueba de independencia de poker" + "\n" + \
+                       "El valor de chi calculado con la prueba de poker es : " + \
+                    str(chiCalc4)

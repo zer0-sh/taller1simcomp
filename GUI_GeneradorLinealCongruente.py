@@ -14,7 +14,7 @@ import PruebaKolmogorov
 import PruebaCorrido
 import PruebaSeries
 
-# ----- Clase GUI_GeneradorLinealCongruente -----
+# °°°°°° Clase GUI_GeneradorLinealCongruente °°°°°°
 
 
 class GUI_GeneradorLinealCongruente:
@@ -32,12 +32,12 @@ class GUI_GeneradorLinealCongruente:
         self.root_GUIGLC.geometry(
             f"{ancho_ventana}x{alto_ventana}+{x_ventana}+{y_ventana}")
 
-        # ----- Imagen Fondo -----
+        # °°°°°° Imagen Fondo °°°°°°
         self.bg = ImageTk.PhotoImage(file="Imagenes/fondo02.jpg")
         Label(self.root_GUIGLC, image=self.bg).place(
             x=0, y=0, relwidth=1, relheight=1)
 
-        # ----- Frame -----
+        # °°°°°° Frame °°°°°°
         self.frameGLC = Frame(self.root_GUIGLC, bg="gray1")
         self.frameGLC.place(x=0, y=0)
 
@@ -45,12 +45,12 @@ class GUI_GeneradorLinealCongruente:
         y_frame = (alto_ventana // 2) - (600 // 2)
         self.frameGLC.place(x=x_frame, y=y_frame, width=1000, height=600)
 
-        # ----- Titulo -----
+        # °°°°°° Titulo °°°°°°
         Titulo = Label(self.frameGLC, text="Generador Lineal Congruente", font=(
             "Agency FB", 30, "bold"), bg="gray1", fg="darkgoldenrod1")
         Titulo.place(relx=0.5, rely=0.08, anchor=CENTER)
 
-        # ----- Entradas Xn, a, c, m -----
+        # °°°°°° Entradas Xn, a, c, m °°°°°°
         Label(self.frameGLC, text="a", font=("Agency FB", 16, "bold"),
               bg="gray1", fg="white").place(x=80, y=83)
         self.a = Entry(self.frameGLC, font=("Agency FB", 16), width=9)
@@ -71,40 +71,40 @@ class GUI_GeneradorLinealCongruente:
         self.m = Entry(self.frameGLC, font=("Agency FB", 16), width=9)
         self.m.place(x=500, y=85)
 
-        # ----- Boton generar (OK) -----
+        # °°°°°° Boton generar (OK) °°°°°°
         BotonOk = Button(self.frameGLC, text="Ok", command=self.generadorLineal, font=(
             "Agency FB", 12, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2")
         BotonOk.place(x=650, y=85, width=40)
 
-        # ----- Pruebas de uniformidad -----
+        # °°°°°° Pruebas de uniformidad °°°°°°
         Label(self.frameGLC, text="Pruebas de uniformidad:", font=(
             "Agency FB", 15, "bold"), bg="gray1", fg="white").place(x=50, y=140)
 
-        # ----- Boton prueba de chi_cuadrado -----
+        # °°°°°° Boton prueba de chi_cuadrado °°°°°°
         BotonChi = Button(self.frameGLC, text="Chi χ²", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaChiCuadrado)
         BotonChi.place(x=90, y=183, width=150)
 
-        # ----- Boton prueba de kolmogorov -----
+        # °°°°°° Boton prueba de kolmogorov °°°°°°
         BotonKo = Button(self.frameGLC, text="Kolmogorov", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaKolmogorov)
         BotonKo.place(x=90, y=240, width=150)
 
-        # ----- Pruebas de independencia -----
+        # °°°°°° Pruebas de independencia °°°°°°
         Label(self.frameGLC, text="Pruebas de independencia:", font=(
             "Agency FB", 15, "bold"), bg="gray1", fg="white").place(x=50, y=300)
 
-        # ----- Boton prueba de corridas -----
+        # °°°°°° Boton prueba de corridas °°°°°°
         BotonCo = Button(self.frameGLC, text="Corridas", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaCorridas)
         BotonCo.place(x=90, y=340, width=150)
 
-        # ----- Boton prueba series -----
+        # °°°°°° Boton prueba series °°°°°°
         BotonSe = Button(self.frameGLC, text="Series", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaSeries)
         BotonSe.place(x=90, y=400, width=150)
 
-        # ----- Boton prueba poker -----
+        # °°°°°° Boton prueba poker °°°°°°
         BotonPo = Button(self.frameGLC, text="Poker", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaPoker)
         BotonPo.place(x=60, y=460, width=120)
@@ -115,17 +115,17 @@ class GUI_GeneradorLinealCongruente:
         w.config(width=5)
         w.place(x=200, y=460)
 
-        # ----- Boton estandar minimo -----
+        # °°°°°° Boton estandar minimo °°°°°°
         BotonVolv = Button(self.frameGLC, text="Estandar Minimo", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirEM)
         BotonVolv.place(x=25, y=530, width=120)
 
-        # ----- Boton random -----
+        # °°°°°° Boton random °°°°°°
         BotonVolv = Button(self.frameGLC, text="Random", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirRandom)
         BotonVolv.place(x=150, y=530, width=120)
 
-        # ----- Botón menú principal -----
+        # °°°°°° Botón menú principal °°°°°°
         BotonInfo = Button(self.frameGLC, text="Menú", font=(
             "Agency FB", 13, "bold"), bg="Skyblue4", fg="white", bd=5, cursor="hand2", command=self.abrirMenu)
         BotonInfo.place(x=275, y=530, width=90)

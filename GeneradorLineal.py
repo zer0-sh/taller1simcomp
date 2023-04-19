@@ -4,13 +4,14 @@
 # Valentina Hurtado 201958542-3743
 # Estefany Castro   201958552-3743
 
-import numpy as np
 from tabulate import tabulate
+
+import numpy as np
 
 
 class GeneradorLineal:
 
-    # ----- Constructor -----
+    # °°°°°° Constructor °°°°°°
     def genLinCongruente(xo, a, c, m):
         xn = 0
         i = 0
@@ -53,4 +54,5 @@ class GeneradorLineal:
             guardados = np.append(guardados, [rn])
             i += 1
 
-        return "Datos Generados:" + str(i) + "\n" + str(tabulate(salida, headers=["index", "Xn", "Rn"], tablefmt='grid', stralign='center'))
+        return "Datos Generados:" + str(i) + "\n" + str(tabulate(salida, headers=["index", "Xn", "Rn"],
+                                                                 tablefmt='grid', stralign='center'))

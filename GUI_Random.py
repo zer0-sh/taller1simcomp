@@ -15,7 +15,7 @@ import PruebaCorrido
 import PruebaSeries
 
 
-# ----- Clase GUI_Random -----
+# °°°°°° Clase GUI_Random °°°°°°
 
 
 class GUI_Random:
@@ -33,12 +33,12 @@ class GUI_Random:
         self.root_GUIPR.geometry(
             f"{ancho_ventana}x{alto_ventana}+{x_ventana}+{y_ventana}")
 
-        # ----- Imagen Fondo -----
+        # °°°°°° Imagen Fondo °°°°°°
         self.bg = ImageTk.PhotoImage(file="Imagenes/fondo02.jpg")
         Label(self.root_GUIPR, image=self.bg).place(
             x=0, y=0, relwidth=1, relheight=1)
 
-        # ----- Frame -----
+        # °°°°°° Frame °°°°°°
         self.framePR = Frame(self.root_GUIPR, bg="gray1")
         self.framePR.place(x=0, y=0)
 
@@ -46,51 +46,51 @@ class GUI_Random:
         y_frame = (alto_ventana // 2) - (600 // 2)
         self.framePR.place(x=x_frame, y=y_frame, width=1000, height=600)
 
-        # ----- Titulo -----
+        # °°°°°° Titulo °°°°°°
         Titulo = Label(self.framePR, text="Generador Random", font=(
             "Agency FB", 30, "bold"), bg="gray1", fg="darkgoldenrod1")
         Titulo.place(relx=0.5, rely=0.08, anchor=CENTER)
 
-        # ----- Campo entrada -----
+        # °°°°°° Campo entrada °°°°°°
         Label(self.framePR, text="Entrada", font=("times", 14,
               "bold"), bg="gray1", fg="white").place(x=80, y=83)
         self.cuadro = Entry(self.framePR, font=("times", 16), width=15)
         self.cuadro.place(x=200, y=85)
 
-        # ----- Boton Ok -----
+        # °°°°°° Boton Ok °°°°°°
         BotonOk = Button(self.framePR, text="Ok", command=self.randoms, font=(
             "Agency FB", 12, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2")
         BotonOk.place(x=650, y=85, width=40)
 
-        # ----- Pruebas de uniformidad -----
+        # °°°°°° Pruebas de uniformidad °°°°°°
         Label(self.framePR, text="Pruebas de uniformidad:", font=(
             "Agency FB", 15, "bold"), bg="gray1", fg="white").place(x=50, y=140)
 
-        # ----- Boton prueba de chi_cuadrado -----
+        # °°°°°° Boton prueba de chi_cuadrado °°°°°°
         BotonChi = Button(self.framePR, text="Chi χ²", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaChiCuadrado)
         BotonChi.place(x=90, y=183, width=150)
 
-        # ----- Boton prueba de kolmogorov -----
+        # °°°°°° Boton prueba de kolmogorov °°°°°°
         BotonKo = Button(self.framePR, text="Kolmogorov", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaKolmogorov)
         BotonKo.place(x=90, y=240, width=150)
 
-        # ----- Pruebas de independencia -----
+        # °°°°°° Pruebas de independencia °°°°°°
         Label(self.framePR, text="Pruebas de independencia:", font=(
             "Agency FB", 15, "bold"), bg="gray1", fg="white").place(x=50, y=300)
 
-        # ----- Boton prueba de corridas -----
+        # °°°°°° Boton prueba de corridas °°°°°°
         BotonCo = Button(self.framePR, text="Corridas", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaCorridas)
         BotonCo.place(x=90, y=340, width=150)
 
-        # ----- Boton prueba series -----
+        # °°°°°° Boton prueba series °°°°°°
         BotonSe = Button(self.framePR, text="Series", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaSeries)
         BotonSe.place(x=90, y=400, width=150)
 
-        # ----- Boton prueba poker -----
+        # °°°°°° Boton prueba poker °°°°°°
         BotonPo = Button(self.framePR, text="Poker", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaPoker)
         BotonPo.place(x=60, y=460, width=120)
@@ -101,17 +101,17 @@ class GUI_Random:
         w.config(width=5)
         w.place(x=200, y=460)
 
-        # ----- Boton estandar minimo -----
+        # °°°°°° Boton estandar minimo °°°°°°
         BotonVolv = Button(self.framePR, text="Estandar Minimo", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirEM)
         BotonVolv.place(x=25, y=530, width=120)
 
-        # ----- Boton lineal congruente -----
+        # °°°°°° Boton lineal congruente °°°°°°
         BotonVolv = Button(self.framePR, text="Lineal congruente", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirLC)
         BotonVolv.place(x=150, y=530, width=120)
 
-        # ----- Botón Menú Principal -----
+        # °°°°°° Botón Menú Principal °°°°°°
         BotonInfo = Button(self.framePR, text="Menú", font=(
             "times", 15), bg="Skyblue4", fg="white", bd=5, cursor="hand2", command=self.abrirMenu)
         BotonInfo.place(x=275, y=530, width=90)

@@ -4,13 +4,14 @@
 # Valentina Hurtado 201958542-3743
 # Estefany Castro   201958552-3743
 
-import numpy as np
 from tabulate import tabulate
+
+import numpy as np
 
 
 class PruebaUnicidadKolmogorov:
-    def pruebaKolmogorov(arr):
 
+    def pruebaKolmogorov(arr):
         x1 = x2 = x3 = x4 = x5 = x6 = x7 = x8 = x9 = x10 = 0
         nDatos = len(arr)
 
@@ -77,8 +78,11 @@ class PruebaUnicidadKolmogorov:
         var = np.max(abs(res))
 
         if (np.max(abs(res)) <= 0.043):
-            return "Prueba de Unicidad de Kolmogorov - Smirnov (K-S)" + "\n\n" + str(tabulate(FO, headers=["rango", "FO", "FOA", "POA", "PEA", "|PEA-POA|"], tablefmt='grid',
-                                                                                              stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" + "Los datos tienen distribucion U(0,1), \npor lo que el generador es bueno en cuanto a uniformidad"
+            return "Prueba de Unicidad de Kolmogorov - Smirnov" + "\n\n" + \
+                str(tabulate(FO, headers=["rango", "FO", "FOA", "POA", "PEA", "|PEA-POA|"], tablefmt='grid',
+                             stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" \
+                + "Los datos tienen distribucion U(0,1), \npor lo que el generador es bueno en cuanto a uniformidad"
         else:
-            return "Prueba de Unicidad de Kolmogorov - Smirnov (K-S)" + "\n\n" + str(tabulate(FO, headers=["rango", "FO", "FOA", "POA", "PEA", "|PEA-POA|"], tablefmt='grid',
-                                                                                              stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" + "No pasó la prueba de Unicidad de Kolmogorov"
+            return "Prueba de Unicidad de Kolmogorov - Smirnov" + "\n\n" + \
+                str(tabulate(FO, headers=["rango", "FO", "FOA", "POA", "PEA", "|PEA-POA|"], tablefmt='grid',
+                             stralign='center')) + "\n\n" + "Calculado :" + str(var) + "\n\n" + "No pasó la prueba de Unicidad de Kolmogorov"

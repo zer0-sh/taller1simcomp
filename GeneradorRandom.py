@@ -4,13 +4,15 @@
 # Valentina Hurtado 201958542-3743
 # Estefany Castro   201958552-3743
 
-import numpy as np
 from tabulate import tabulate
+
+import numpy as np
 
 
 class pyRandom:
-    def arreglo(self):
 
+    # °°°°°° Constructor °°°°°°
+    def arreglo(self):
         salida = []
         datos = np.array([])
 
@@ -23,7 +25,6 @@ class pyRandom:
         return datos
 
     def tabla(self):
-
         salida = []
         datos = np.array([])
 

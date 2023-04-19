@@ -4,13 +4,14 @@
 # Valentina Hurtado 201958542-3743
 # Estefany Castro   201958552-3743
 
-import math
 from tabulate import tabulate
+
+import math
 
 
 class GeneradorEstandar:
 
-    # ----- Constructor -----
+    # °°°°°° Constructor °°°°°°
     def generador(xo, a, m):
         xn = 0
         i = 0
@@ -83,6 +84,7 @@ class GeneradorEstandar:
             if xn < 0:
                 quebrador = True
         if xn < 0:
-            return "Generador erroneo(Ha salido un negativo)"
+            return "Generador erroneo (Ha salido un negativo)"
         else:
-            return "Datos Generados:" + str(i) + "\n" + str(tabulate(salida, headers=["index", "Xn", "Rn"], tablefmt='grid', stralign='center'))
+            return "Datos Generados:" + str(i) + "\n" + str(tabulate(salida, headers=["index", "Xn", "Rn"],
+                                                                     tablefmt='grid', stralign='center'))

@@ -7,7 +7,7 @@
 from tkinter import CENTER, Frame, Label, Button, Tk
 from PIL import ImageTk
 
-# ----- Clase GUI_INICIO -----
+# °°°°°° Clase GUI_INICIO °°°°°°
 
 
 class GUI_Inicio:
@@ -25,12 +25,12 @@ class GUI_Inicio:
         rootInicio.geometry(
             f"{ancho_ventana}x{alto_ventana}+{x_ventana}+{y_ventana}")
 
-        # ----- Imagen Fondo -----
+        # °°°°°° Imagen Fondo °°°°°°
         self.bg = ImageTk.PhotoImage(file="Imagenes/fondo02.jpg")
         Label(self.rootInicio, image=self.bg).place(
             x=0, y=0, relwidth=1, relheight=1)
 
-        # ----- Frame -----
+        # °°°°°° Frame °°°°°°
         frameInicio = Frame(self.rootInicio, bg="gray1")
         frameInicio.place(x=0, y=0)
 
@@ -42,21 +42,21 @@ class GUI_Inicio:
             "Agency FB", 35, "bold"), bg="gray1", fg="darkgoldenrod1")
         label_texto.place(relx=0.5, rely=0.2, anchor=CENTER)
 
-        # ----- Label seleccion -----
+        # °°°°°° Label seleccion °°°°°°
         Label(frameInicio, text="- Por favor, seleccione un generador:",
               font=("Agency FB", 20, "bold"), bg="gray1", fg="white").place(x=50, y=190)
 
-        # ----- Boton generador lineal congruente -----
+        # °°°°°° Boton generador lineal congruente °°°°°°
         BotonLC = Button(frameInicio, text="Lineal congruente", cursor="hand2", command=self.abrirLC, font=(
             "Agency FB", 20, "bold"), bg="darkgoldenrod1", fg="white")
         BotonLC.place(relx=0.5, y=280, width=200, anchor="center")
 
-        # ----- Boton generador de estandar minimo -----
+        # °°°°°° Boton generador de estandar minimo °°°°°°
         BotonEM = Button(frameInicio, text="Estandar Mínimo", cursor="hand2", relief="flat", command=self.abrirEM, font=(
             "Agency FB", 20, "bold"), bg="darkgoldenrod1", fg="white")
         BotonEM.place(relx=0.5, y=350, width=200, anchor="center")
 
-        # ----- Boton generador random de python -----
+        # °°°°°° Boton generador random de python °°°°°°
         BotonSalir = Button(frameInicio, text="Python Random", cursor="hand2", command=self.abrirRandom, font=(
             "Agency FB", 20, "bold"), bg="darkgoldenrod1", fg="white")
         BotonSalir.place(relx=0.5, y=420, width=200, anchor="center")

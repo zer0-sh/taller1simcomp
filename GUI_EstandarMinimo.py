@@ -14,7 +14,7 @@ import PruebaKolmogorov
 import PruebaCorrido
 import PruebaSeries
 
-# ----- Clase GUI_EstandarMinimo -----
+# °°°°°° Clase GUI_EstandarMinimo °°°°°°
 
 
 class GUI_EstandarMinimo:
@@ -23,7 +23,7 @@ class GUI_EstandarMinimo:
         self.root_GUIEM = root_GUIEM
         self.root_GUIEM.title("Generador estandar minimo")
         self.root_GUIEM.resizable(False, False)
-        ancho_ventana = 1000
+        ancho_ventana = 1100
         alto_ventana = 650
         ancho_pantalla = root_GUIEM.winfo_screenwidth()
         alto_pantalla = root_GUIEM.winfo_screenheight()
@@ -32,25 +32,25 @@ class GUI_EstandarMinimo:
         self.root_GUIEM.geometry(
             f"{ancho_ventana}x{alto_ventana}+{x_ventana}+{y_ventana}")
 
-        # ----- Imagen Fondo -----
+        # °°°°°° Imagen Fondo °°°°°°
         self.bg = ImageTk.PhotoImage(file="Imagenes/fondo02.jpg")
         Label(self.root_GUIEM, image=self.bg).place(
             x=0, y=0, relwidth=1, relheight=1)
 
-        # ----- Frame -----
+        # °°°°°° Frame °°°°°°
         self.frameEM = Frame(self.root_GUIEM, bg="gray1")
         self.frameEM.place(x=0, y=0)
 
-        x_frame = (ancho_ventana // 2) - (900 // 2)
+        x_frame = (ancho_ventana // 2) - (1000 // 2)
         y_frame = (alto_ventana // 2) - (600 // 2)
-        self.frameEM.place(x=x_frame, y=y_frame, width=900, height=600)
+        self.frameEM.place(x=x_frame, y=y_frame, width=1000, height=600)
 
-        # ----- Titulo -----
+        # °°°°°° Titulo °°°°°°
         Titulo = Label(self.frameEM, text="Generador Estandar Minino", font=(
             "Agency FB", 30, "bold"), bg="gray1", fg="darkgoldenrod1")
         Titulo.place(relx=0.5, rely=0.08, anchor=CENTER)
 
-        # ----- Entradas Xn, a, m -----
+        # °°°°°° Entradas Xn, a, m °°°°°°
         Label(self.frameEM, text="a", font=("Agency FB", 16, "bold"),
               bg="gray1", fg="white").place(x=80, y=83)
         self.a = Entry(self.frameEM, font=("Agency FB", 16), width=9)
@@ -66,40 +66,40 @@ class GUI_EstandarMinimo:
         self.m = Entry(self.frameEM, font=("Agency FB", 16), width=9)
         self.m.place(x=370, y=85)
 
-        # ----- Boton generar (OK) -----
+        # °°°°°° Boton ok °°°°°°
         BotonOk = Button(self.frameEM, text="Ok", command=self.generadorEM, font=(
             "Agency FB", 12, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2")
         BotonOk.place(x=650, y=85, width=40)
 
-        # ----- Pruebas de uniformidad -----
+        # °°°°°° Pruebas de uniformidad °°°°°°
         Label(self.frameEM, text="Pruebas de uniformidad:", font=(
             "Agency FB", 15, "bold"), bg="gray1", fg="white").place(x=50, y=140)
 
-        # ----- Boton prueba de chi_cuadrado -----
+        # °°°°°° Boton prueba de chi_cuadrado °°°°°°
         BotonChi = Button(self.frameEM, text="Chi χ²", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaChiCuadrado)
         BotonChi.place(x=90, y=183, width=150)
 
-        # ----- Boton prueba de kolmogorov -----
+        # °°°°°° Boton prueba de kolmogorov °°°°°°
         BotonKo = Button(self.frameEM, text="Kolmogorov", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaKolmogorov)
         BotonKo.place(x=90, y=240, width=150)
 
-        # ----- Pruebas de independencia -----
+        # °°°°°° Pruebas de independencia °°°°°°
         Label(self.frameEM, text="Pruebas de independencia:", font=(
             "Agency FB", 15, "bold"), bg="gray1", fg="white").place(x=50, y=300)
 
-        # ----- Boton prueba de corridas -----
+        # °°°°°° Boton prueba de corridas °°°°°°
         BotonCo = Button(self.frameEM, text="Corridas", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaCorridas)
         BotonCo.place(x=90, y=340, width=150)
 
-        # ----- Boton prueba series -----
+        # °°°°°° Boton prueba series °°°°°°
         BotonSe = Button(self.frameEM, text="Series", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaSeries)
         BotonSe.place(x=90, y=400, width=150)
 
-        # ----- Boton prueba poker -----
+        # °°°°°° Boton prueba poker °°°°°°
         BotonPo = Button(self.frameEM, text="Poker", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.pruebaPoker)
         BotonPo.place(x=60, y=460, width=120)
@@ -110,17 +110,17 @@ class GUI_EstandarMinimo:
         w.config(width=5)
         w.place(x=200, y=460)
 
-        # ----- Boton lineal congruente -----
+        # °°°°°° Boton lineal congruente °°°°°°
         BotonVolv = Button(self.frameEM, text="Lineal congruente", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirLC)
         BotonVolv.place(x=25, y=530, width=120)
 
-        # ----- Boton random -----
+        # °°°°°° Boton random °°°°°°
         BotonVolv = Button(self.frameEM, text="Random", font=(
             "Agency FB", 13, "bold"), bg="darkgoldenrod1", fg="white", bd=5, cursor="hand2", command=self.abrirRandom)
         BotonVolv.place(x=150, y=530, width=120)
 
-        # ----- Botón menú principal -----
+        # °°°°°° Botón menú principal °°°°°°
         BotonInfo = Button(self.frameEM, text="Menú", font=(
             "Agency FB", 13, "bold"), bg="Skyblue4", fg="white", bd=5, cursor="hand2", command=self.abrirMenu)
         BotonInfo.place(x=275, y=530, width=90)
@@ -189,7 +189,7 @@ class GUI_EstandarMinimo:
         m = int(self.m.get())
         k = int(self.variable.get())
         arreglo = GeneradorEstandarMinimo.GeneradorEstandar.generador(
-            xn, xn, a, m)
+            xn, a, m)
         datos = PruebaPoker.PruebaIndependenciaPoker.pruebaPoker(
             arreglo, k)
         self.text.insert(INSERT, datos)
